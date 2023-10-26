@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace test.Database
+{
+    public class HomeClass
+    {
+        public List<AD> Ad { get; set; }
+        public List<Features>  Features { get; set; }
+        public List<Team> team { get; set; }
+        public List<Contact> contact { get; set; }
+        public List<Project> Project { get; set; }
+        public List<WebsiteSetting> WebsiteSetting { get; set; }
+    }
+}
+
