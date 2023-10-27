@@ -20,38 +20,7 @@ namespace test.Controllers
         }
         private static readonly List<HomeClass> Homedata = new List<HomeClass>
         {
-                new HomeClass
-                {
-                    WebsiteSetting =new List<WebsiteSetting>{
-                        new WebsiteSetting
-                        {
-                            Dscrp = "Setting 2"
-                        }, },
-                    contact = new List<Contact>
-                        {
-                            new Contact
-                            {
-                                Tiktok = "mustafa saad ticktock"
-                            },
-                            new Contact
-                            {
-                                Tiktok = "mustafa saad2 ticktock"
-                            }
-                        },
-                    Ad = new List<AD>
-                    {
-                        new AD
-                        
-                        {
-                            title = "mustafa saad ad title"
-                        } },
-                    team = new List<Team>
-                    { new Team
-                        {
-                            Job = "mustafa saad is Team Leader"
-                        }}
-                }
-        };
+       };
 
 
         [HttpGet("GetAll")]

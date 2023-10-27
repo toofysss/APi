@@ -12,7 +12,7 @@ namespace test.Database
         public List<Team> team { get; set; }
         public List<Contact> contact { get; set; }
         public List<Project> Project { get; set; }
-        public List<WebsiteSetting> WebsiteSetting { get; set; }
+        public List<Websiteinfo> WebsiteSetting { get; set; }
     }
 }
 

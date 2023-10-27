@@ -1,21 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\musta\\Source\\Repos\\toofysss\\APi\\LogicSpark\\test\\test\\test.csproj": {}
+    "C:\\Users\\Tabark\\Desktop\\APi\\LogicSpark\\test\\test\\test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\musta\\Source\\Repos\\toofysss\\APi\\LogicSpark\\test\\test\\test.csproj": {
+    "C:\\Users\\Tabark\\Desktop\\APi\\LogicSpark\\test\\test\\test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\musta\\Source\\Repos\\toofysss\\APi\\LogicSpark\\test\\test\\test.csproj",
+        "projectUniqueName": "C:\\Users\\Tabark\\Desktop\\APi\\LogicSpark\\test\\test\\test.csproj",
         "projectName": "test",
-        "projectPath": "C:\\Users\\musta\\Source\\Repos\\toofysss\\APi\\LogicSpark\\test\\test\\test.csproj",
-        "packagesPath": "C:\\Users\\musta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\musta\\Source\\Repos\\toofysss\\APi\\LogicSpark\\test\\test\\obj\\",
+        "projectPath": "C:\\Users\\Tabark\\Desktop\\APi\\LogicSpark\\test\\test\\test.csproj",
+        "packagesPath": "C:\\Users\\Tabark\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tabark\\Desktop\\APi\\LogicSpark\\test\\test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\musta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Users\\Tabark\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -23,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\Programing\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,6 +44,18 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"

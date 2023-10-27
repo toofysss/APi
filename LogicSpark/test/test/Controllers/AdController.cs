@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using test.Database;
 
 namespace test.Controllers
 {
@@ -11,30 +12,81 @@ namespace test.Controllers
     [Route("[controller]")]
     public class AdController:ControllerBase
     {
-        private readonly ILogger<AdController> _adController;
+        private ApplicationDbContext _adController;
 
-        public AdController(ILogger<AdController> logger)
+        public AdController(ApplicationDbContext logger)
         {
             _adController = logger;
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public IEnumerable<AD> Get()
         {
-            var rng = new Random();
-            var result = Enumerable.Range(1, 5).Select(index => new AD
+            return _adController.ad;
+        }
+
+        [HttpGet("GetByID")]
+        public ActionResult<AD> Get(int id)
+        {
+            var getbyid = _adController.ad.Where(Features => Features.Id == id);
+            if (getbyid != null)
             {
-                Id = index,
-                title = "saad",
-                Dscrp = "hi my name is mustafa " + index,
-                Link = "the link is" + index,
-                img = "The Img " + index,
-                bg = "The bg is " + index,
+                return Ok(getbyid);
+            }
+            else
+            {
+                return NotFound();
+            };
+        }
 
-            })
-            .ToArray();
+        [HttpPost("Insert")]
+        public IActionResult Post([FromBody] AD AdData)
+        {
+            if (!_adController.ad.Any(ad => ad.Id == AdData.Id))
+            {
+                _adController.ad.Add(AdData);
+                _adController.SaveChanges();
+                return Ok(_adController.ad);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
 
-            return result;
+        [HttpDelete("Delete")]
+        public IActionResult delete(int id)
+        {
+            var ADid = _adController.ad.Find(id);
+            if (ADid !=null)
+            {
+                _adController.ad.Remove(ADid);
+                _adController.SaveChanges();
+                return Ok(_adController.ad);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+     
+        [HttpPut("Update")]
+        public IActionResult Update(int id,[FromBody] AD AdData) 
+        {
+            var ADfromDb = _adController.ad.FirstOrDefault(x=>x.Id ==id);
+            if (ADfromDb != null)
+            {
+                ADfromDb.img = AdData.img;
+                ADfromDb.Link = AdData.Link;
+                ADfromDb.title = AdData.title;
+                _adController.ad.Update(ADfromDb);
+                _adController.SaveChanges();
+                return Ok(_adController.ad);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

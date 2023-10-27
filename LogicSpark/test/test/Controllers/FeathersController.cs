@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using test.Database;
 
 namespace test.Controllers
 {
@@ -11,26 +11,78 @@ namespace test.Controllers
     [Route("[controller]")]
     public class FeathersController : ControllerBase
     {
-        private readonly ILogger<FeathersController> _FeathersController;
+        private ApplicationDbContext _FeathersController;
 
-        public FeathersController(ILogger<FeathersController> logger)
+        public FeathersController(ApplicationDbContext logger)
         {
             _FeathersController = logger;
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public IEnumerable<Features> Get()
         {
-            var rng = new Random();
-            var result = Enumerable.Range(1, 5).Select(index => new Features
-            {
-                Id = index,
-                Img = "saad",
-                Dscrp = "hi my name is mustafa " + index
-            })
-            .ToArray(); 
+            return _FeathersController.Features;
+        }
 
-            return result;
+        [HttpGet("GetByID")]
+        public ActionResult<Features> Get(int id)
+        {
+            var getbyid = _FeathersController.Features.Where(Features => Features.Id == id);
+            if(getbyid != null)
+            {
+                return Ok(getbyid);
+            }else{
+                return NotFound();
+            };
+        }
+
+        [HttpPost("Insert")]
+        public IActionResult Post([FromBody] Features FeaturesData)
+        {
+            if (!_FeathersController.Features.Any(Features => Features.Id == FeaturesData.Id))
+            {
+                _FeathersController.Features.Add(FeaturesData);
+                _FeathersController.SaveChanges();
+                return Ok(_FeathersController.Features);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpDelete("Delete")]
+        public IActionResult delete(int id)
+        {
+            var Featuresid = _FeathersController.Features.Find(id);
+            if (Featuresid != null)
+            {
+                _FeathersController.Features.Remove(Featuresid);
+                _FeathersController.SaveChanges();
+                return Ok(_FeathersController.Features);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpPut("Update")]
+        public IActionResult Update(int id, [FromBody] Features FeaturesData)
+        {
+            var FeaturesfromDb = _FeathersController.Features.FirstOrDefault(x => x.Id == id);
+            if (FeaturesfromDb != null)
+            {
+                FeaturesfromDb.Img = FeaturesData.Img;
+                FeaturesfromDb.Dscrp = FeaturesData.Dscrp;
+                _FeathersController.Features.Update(FeaturesfromDb);
+                _FeathersController.SaveChanges();
+                return Ok(_FeathersController.Features);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

@@ -11,10 +11,8 @@ namespace test.Database
         public string Dscrp { get; set; }
         public string Details { get; set; }
         public string Link { get; set; }
-        public string ProjectFiel { get; set; }
+        public string ProjectFile { get; set; }
         public ICollection<ProjectImg> ProjectImg { get; set; }
         public ICollection<Team> TeamId { get; set; }
-        public Team Team { get; set; }
-
     }
 }
