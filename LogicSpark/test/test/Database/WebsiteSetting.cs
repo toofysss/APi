@@ -13,8 +13,6 @@ namespace test
         public int Id { get; set; }
         public string Dscrp { get; set; }
         public string Logoimg { get; set; }
-
-        [JsonIgnore]
-        public List<Color> ColorsSetting { get; set; }
+        public ICollection<Color> ColorsSetting { get; set; }
     }
 }

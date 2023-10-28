@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace test.Database
 {
+    [Table("projects")]
     public class Project
     {
         public int Id { get; set; }
@@ -13,6 +15,6 @@ namespace test.Database
         public string Link { get; set; }
         public string ProjectFile { get; set; }
         public ICollection<ProjectImg> ProjectImg { get; set; }
-        public ICollection<Team> TeamId { get; set; }
+        public Team Team { get; set; }
     }
 }

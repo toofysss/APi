@@ -10,7 +10,7 @@ namespace test.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AdController:ControllerBase
+    public class AdController : ControllerBase
     {
         private ApplicationDbContext _adController;
 
@@ -58,7 +58,7 @@ namespace test.Controllers
         public IActionResult delete(int id)
         {
             var ADid = _adController.ad.Find(id);
-            if (ADid !=null)
+            if (ADid != null)
             {
                 _adController.ad.Remove(ADid);
                 _adController.SaveChanges();
@@ -69,11 +69,11 @@ namespace test.Controllers
                 return NotFound();
             }
         }
-     
+
         [HttpPut("Update")]
-        public IActionResult Update(int id,[FromBody] AD AdData) 
+        public IActionResult Update(int id, [FromBody] AD AdData)
         {
-            var ADfromDb = _adController.ad.FirstOrDefault(x=>x.Id ==id);
+            var ADfromDb = _adController.ad.FirstOrDefault(x => x.Id == id);
             if (ADfromDb != null)
             {
                 ADfromDb.img = AdData.img;
@@ -88,5 +88,6 @@ namespace test.Controllers
                 return NotFound();
             }
         }
+  
     }
 }

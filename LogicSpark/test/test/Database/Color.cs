@@ -8,18 +8,13 @@ using System.Threading.Tasks;
 
 namespace test
 {
-    [Table("color")]
+    [Table("p_color")]
     public class Color
     {
         [Key]
         public int Id { get; set; }
         public string Dscrp { get; set; }
         public string Title { get; set; }
-
-        [ForeignKey("Websiteinfo")]
-        public int WebsiteinfoID { get; set; }
-
-        [JsonIgnore]
-        public Websiteinfo WebsiteSetting { get; set; }
+        public int WebsiteinfoId { get; set; }
     }
 }

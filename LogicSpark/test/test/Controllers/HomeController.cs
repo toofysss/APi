@@ -20,7 +20,7 @@ namespace test.Controllers
         }
         private static readonly List<HomeClass> Homedata = new List<HomeClass>
         {
-       };
+        };
 
 
         [HttpGet("GetAll")]

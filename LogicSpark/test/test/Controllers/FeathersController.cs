@@ -28,10 +28,12 @@ namespace test.Controllers
         public ActionResult<Features> Get(int id)
         {
             var getbyid = _FeathersController.Features.Where(Features => Features.Id == id);
-            if(getbyid != null)
+            if (getbyid != null)
             {
                 return Ok(getbyid);
-            }else{
+            }
+            else
+            {
                 return NotFound();
             };
         }
