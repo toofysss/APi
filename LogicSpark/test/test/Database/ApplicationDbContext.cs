@@ -16,6 +16,10 @@ namespace test.Database
         public DbSet<Features> Features { get; set; }
         public DbSet<Websiteinfo> Websiteinfo { get; set; }
         public DbSet<Color> ColorsSetting { get; set; }
+        public DbSet<Team> Team { get; set; }
+        public DbSet<Social> Social { get; set; }
 
+        public DbSet<Project> Project { get; set; }
+        public DbSet<Contact> Contact { get; set; }
     }
 }

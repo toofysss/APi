@@ -1,9 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Tabark\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Tabark\\.nuget\\packages",
-      "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\musta\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\musta\\.nuget\\packages"
     ]
   }
 }

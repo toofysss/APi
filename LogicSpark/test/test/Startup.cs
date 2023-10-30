@@ -39,7 +39,7 @@ namespace test
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Logic Spark", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Logic Spark"});
             });
         }
 
@@ -50,7 +50,7 @@ namespace test
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Logic Spark v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Logic Spark"));
             }
 
             app.UseHttpsRedirection();
