@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace test.Database
 {
-    [Table("projects")]
-    public class Project
+    [Table("blogs")]
+    public class Blogs
     {
-        public int Id { get; set; }
+        public int id { get; set; }
+        public string title { get; set; }
         public string Dscrp { get; set; }
-        public string Details { get; set; }
-        public string Link { get; set; }
-        public string ProjectFile { get; set; }
+        public string img { get; set; }
+        public DateTime Date { get; set; }
         public int TeamID { get; set; }
-        public List<ProjectImg> ProjectImg { get; set; }
         public Team Team { get; set; }
     }
 }

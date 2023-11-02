@@ -46,7 +46,7 @@ namespace test.Controllers
             {
                 _adController.ad.Add(AdData);
                 _adController.SaveChanges();
-                return Ok(_adController.ad);
+                return Ok("Success");
             }
             else
             {
@@ -62,7 +62,7 @@ namespace test.Controllers
             {
                 _adController.ad.Remove(ADid);
                 _adController.SaveChanges();
-                return Ok(_adController.ad);
+                return Ok("Success");
             }
             else
             {
@@ -81,7 +81,7 @@ namespace test.Controllers
                 ADfromDb.title = AdData.title;
                 _adController.ad.Update(ADfromDb);
                 _adController.SaveChanges();
-                return Ok(_adController.ad);
+                return Ok("Success");
             }
             else
             {

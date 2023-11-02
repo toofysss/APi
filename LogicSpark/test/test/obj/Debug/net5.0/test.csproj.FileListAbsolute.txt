@@ -139,3 +139,4 @@ C:\Users\musta\Desktop\APi\LogicSpark\test\test\obj\Debug\net5.0\test.dll
 C:\Users\musta\Desktop\APi\LogicSpark\test\test\obj\Debug\net5.0\ref\test.dll
 C:\Users\musta\Desktop\APi\LogicSpark\test\test\obj\Debug\net5.0\test.pdb
 C:\Users\musta\Desktop\APi\LogicSpark\test\test\obj\Debug\net5.0\test.genruntimeconfig.cache
+C:\Users\musta\Desktop\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll

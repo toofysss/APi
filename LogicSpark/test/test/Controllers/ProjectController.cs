@@ -9,8 +9,8 @@ using test.Database;
 
 namespace test.Controllers
 {
-    [Controller]
-    [Route("controller")]
+    [ApiController]
+    [Route("[controller]")]
 
     public class ProjectController : ControllerBase
     {
@@ -21,171 +21,136 @@ namespace test.Controllers
             _context = context;
         }
 
+
         [HttpGet()]
-        public async Task<ActionResult<IEnumerable<Project>>> GetWebsiteInfos()
+        public async Task<ActionResult<IEnumerable<object>>> GetWebsiteInfos()
         {
-            return await _context.Project.Include(wi => wi.ProjectImg).Include(wi => wi.Team).ThenInclude(team => team.Social).ToListAsync();
+            var projects = await _context.Project.Include(p => p.ProjectImg).Select(p => new
+            {
+                Id = p.Id,
+                Dscrp = p.Dscrp,
+                Details = p.Details,
+                Link = p.Link,
+                ProjectFile = p.ProjectFile,
+                ProjectImg = _context.ProjectImg.Where(pi => pi.ProjectId == p.Id).ToList(),
+                Team = _context.Team
+                .Where(t => t.Id == p.TeamID)
+                .Include(t => t.Social)
+                .Where(t => t.Social.id == t.SocialID)
+                .ToList()
+            }).ToListAsync();
+            return projects;
         }
 
-        //public class InsertDataDto
-        //{
-        //    public Project project { get; set; }
-        //    public List<ProjectImg> ProjectImg { get; set; }
-        //}
+        [HttpGet("GetByID")]
+        public async Task<IEnumerable<object>> GetTeam(int id)
+        {
+            var Project = await _context.Project
+                .Include(t => t.ProjectImg)
+                .Where(t => t.Id == id).
+                 Select(p => new
+                 {
+                     Id = p.Id,
+                     Dscrp = p.Dscrp,
+                     Details = p.Details,
+                     Link = p.Link,
+                     ProjectFile = p.ProjectFile,
+                     ProjectImg = _context.ProjectImg.Where(pi => pi.ProjectId == p.Id).ToList(),
+                     Team = _context.Team
+                     .Where(t => t.Id == p.TeamID)
+                     .Include(t => t.Social)
+                     .Where(t => t.Social.id == t.SocialID)
+                     .ToList()
+                 }).ToListAsync();
+
+            return Project;
+        }
+
+        [HttpDelete("Delete")]
+        public IActionResult Delete(int id)
+        {
+            var projectsToDelete = _context.Project.Find(id);
+
+            if (projectsToDelete != null)
+            {
+                var projectImages = _context.ProjectImg.Where(pi => pi.ProjectId == projectsToDelete.Id).ToList();
+
+                _context.ProjectImg.RemoveRange(projectImages);
+                _context.Project.Remove(projectsToDelete);
+                _context.SaveChanges();
+                return Ok("Success");
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        public class InsertDataDto
+        {
+            public Project project { get; set; }
+
+            public List<ProjectImg> Img { get; set; }
+        }
+
+        [HttpPut("Update")]
+        public IActionResult Update(int id, [FromBody] Project project)
+        {
+            var projectFromDb = _context.Project.FirstOrDefault(x => x.Id == id);
+
+            if (projectFromDb == null) return NotFound();
+
+            projectFromDb.ProjectFile = project.ProjectFile;
+            projectFromDb.Link = project.Link;
+            projectFromDb.TeamID =project.TeamID;
+            projectFromDb.Dscrp = project.Dscrp;
+            projectFromDb.Details = project.Details;
+            foreach (var projectImg in project.ProjectImg)
+            {
+                var check = _context.ProjectImg.FirstOrDefault(pi => pi.Id == projectImg.Id && pi.ProjectId ==id);
+                if (check != null)
+                {
+                    check.ProjectId = project.Id;
+                    check.Dscrp = projectImg.Dscrp;
+                    _context.ProjectImg.Update(check);
+                }
+                else
+                {
+                    var newProjectImg = new ProjectImg
+                    {
+                        Id =0, 
+                        ProjectId = id, 
+                        Dscrp = projectImg.Dscrp 
+                    };
+                    _context.ProjectImg.Add(newProjectImg);
+                }    
+            }
+            _context.Project.Update(projectFromDb);
+            _context.SaveChanges();
+            return Ok("Success");
+        }
 
 
-        //[HttpGet("GetByID")]
-        //public ActionResult<Websiteinfo> Get(int id)
-        //{
-        //    var websiteInfo = _context.Websiteinfo
-        //        .Include(w => w.ColorsSetting)
-        //        .SingleOrDefault(w => w.Id == id);
-
-        //    if (websiteInfo == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var transformedData = new
-        //    {
-        //        id = websiteInfo.Id,
-        //        dscrp = websiteInfo.Dscrp,
-        //        logoimg = websiteInfo.Logoimg,
-        //        colorsSetting = websiteInfo.ColorsSetting.Select(c => new
-        //        {
-        //            id = c.Id,
-        //            dscrp = c.Dscrp,
-        //            title = c.Title,
-        //            websiteinfoID = c.WebsiteinfoID
-        //        }).ToList()
-        //    };
-
-        //    return Ok(transformedData);
-        //}
-
-        //[HttpDelete("Delete")]
-        //public IActionResult Delete(int id)
-        //{
-        //    var websiteInfo = _context.Websiteinfo.Include(w => w.ColorsSetting).SingleOrDefault(w => w.Id == id);
-
-        //    if (websiteInfo == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    _context.ColorsSetting.RemoveRange(websiteInfo.ColorsSetting);
-
-        //    _context.Websiteinfo.Remove(websiteInfo);
-
-        //    _context.SaveChanges();
-
-        //    var transformedData = new
-        //    {
-        //        id = websiteInfo.Id,
-        //        dscrp = websiteInfo.Dscrp,
-        //        logoimg = websiteInfo.Logoimg,
-        //        colorsSetting = websiteInfo.ColorsSetting.Select(c => new
-        //        {
-        //            id = c.Id,
-        //            dscrp = c.Dscrp,
-        //            title = c.Title,
-        //            websiteinfoID = c.WebsiteinfoID
-        //        }).ToList()
-        //    };
-
-        //    return Ok(transformedData);
-        //}
 
 
-        //[HttpPost("Insert")]
-        //public IActionResult Insert([FromBody] InsertDataDto insertDataDto)
-        //{
-        //    if (insertDataDto == null)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    var websiteInfo = insertDataDto.WebsiteInfo;
-        //    var colorsSetting = insertDataDto.ColorsSetting;
-        //    if (websiteInfo == null || colorsSetting == null)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    _context.Websiteinfo.Add(websiteInfo);
-        //    _context.SaveChanges();
-        //    foreach (var color in colorsSetting)
-        //    {
-        //        color.WebsiteinfoID = websiteInfo.Id;
-        //        _context.ColorsSetting.Add(color);
-        //    }
-        //    _context.SaveChanges();
+        [HttpPost("Insert")]
+        public IActionResult Insert([FromBody] Project project)
+        {
+            if (project == null)
+                return BadRequest();
 
-        //    var transformedData = new
-        //    {
-        //        id = websiteInfo.Id,
-        //        dscrp = websiteInfo.Dscrp,
-        //        logoimg = websiteInfo.Logoimg,
-        //        colorsSetting = websiteInfo.ColorsSetting.Select(c => new
-        //        {
-        //            id = c.Id,
-        //            dscrp = c.Dscrp,
-        //            title = c.Title,
-        //            websiteinfoID = c.WebsiteinfoID
-        //        }).ToList()
-        //    };
+            _context.Project.Add(project);
 
-        //    return Ok(transformedData);
-        //}
+            foreach (var projectImg in project.ProjectImg)
+            {
+                projectImg.ProjectId = project.Id;
+                _context.ProjectImg.Add(projectImg);
+            }
 
-        //[HttpPut("Update")]
-        //public IActionResult Update(int id, [FromBody] InsertDataDto insertDataDto)
-        //{
-        //    if (insertDataDto == null)
-        //    {
-        //        return BadRequest();
-        //    }
+            _context.SaveChanges();
 
-        //    var websiteInfo = insertDataDto.WebsiteInfo;
-        //    var colorsSetting = insertDataDto.ColorsSetting;
-
-        //    if (websiteInfo == null || colorsSetting == null)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    var existingWebsiteInfo = _context.Websiteinfo.Find(id);
-
-        //    if (existingWebsiteInfo == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    existingWebsiteInfo.Dscrp = websiteInfo.Dscrp;
-        //    existingWebsiteInfo.Logoimg = websiteInfo.Logoimg;
-        //    var colorsToDelete = _context.ColorsSetting.Where(color => color.WebsiteinfoID == id);
-        //    _context.ColorsSetting.RemoveRange(colorsToDelete);
-        //    foreach (var color in colorsSetting)
-        //    {
-        //        color.WebsiteinfoID = id;
-        //        _context.ColorsSetting.Add(color);
-        //    }
-
-        //    _context.SaveChanges();
-
-        //    var transformedData = new
-        //    {
-        //        id = websiteInfo.Id,
-        //        dscrp = websiteInfo.Dscrp,
-        //        logoimg = websiteInfo.Logoimg,
-        //        colorsSetting = websiteInfo.ColorsSetting.Select(c => new
-        //        {
-        //            id = c.Id,
-        //            dscrp = c.Dscrp,
-        //            title = c.Title,
-        //            websiteinfoID = c.WebsiteinfoID
-        //        }).ToList()
-        //    };
-
-        //    return Ok(transformedData);
-        //}
+            return Ok("Success");
+        }
 
     }
-
 }
 

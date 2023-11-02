@@ -9,8 +9,8 @@ using test.Database;
 
 namespace test.Controllers
 {
-    [Controller]
-    [Route("controller")]
+    [ApiController]
+    [Route("[controller]")]
     public class TeamController:ControllerBase
     {
         private readonly ApplicationDbContext _TeamController;
@@ -19,12 +19,11 @@ namespace test.Controllers
 
         public class InsertDataTeam
         {
-
             public Team Team { get; set; }
-
             public Social Social { get; set; }
         }
-        [HttpGet("Team/GetAll")]
+
+        [HttpGet("GetAll")]
         public async Task<IEnumerable<object>> GetTeamDataAsync()
         {
             var teamData = await _TeamController.Team.Include(t => t.Social).Select(t => new
@@ -44,7 +43,7 @@ namespace test.Controllers
 
 
 
-        [HttpGet("Team/GetByID")]
+        [HttpGet("GetByID")]
         public async Task<IEnumerable<object>> GetTeam(int id)
         {
             var teamData = await _TeamController.Team
@@ -65,7 +64,7 @@ namespace test.Controllers
             return teamData;
         }
 
-        [HttpPost("Team/InsertData")]
+        [HttpPost("InsertData")]
         public async Task<ActionResult<IEnumerable<object>>> Insert([FromBody] InsertDataTeam insertDataDto)
         {
             if (insertDataDto == null)
@@ -89,11 +88,11 @@ namespace test.Controllers
             _TeamController.SaveChanges();
 
 
-            return Ok(GetTeamDataAsync());
+            return Ok("Success");
 
         }
 
-        [HttpPut("Team/UpdateData")]
+        [HttpPut("UpdateData")]
         public async Task<ActionResult<IEnumerable<object>>> Update(int id, [FromBody] Team UpdateDataDto)
         {
         var Teamid=_TeamController.Team.FirstOrDefault(x => x.Id == id);
@@ -119,7 +118,7 @@ namespace test.Controllers
 
         }
 
-        [HttpDelete("Team/DeleteData")]
+        [HttpDelete("DeleteData")]
         public async Task<ActionResult<IEnumerable<object>>> Delete(int id)
         {
             var ADid = _TeamController.Team.Find(id);
@@ -129,7 +128,7 @@ namespace test.Controllers
                 _TeamController.Social.Remove(socialID);
                 _TeamController.Team.Remove(ADid);
                 _TeamController.SaveChanges();
-                return GetTeamDataAsync();
+                return Ok("Success");
             }
             else
             {

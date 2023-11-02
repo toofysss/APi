@@ -18,8 +18,11 @@ namespace test.Database
         public DbSet<Color> ColorsSetting { get; set; }
         public DbSet<Team> Team { get; set; }
         public DbSet<Social> Social { get; set; }
+        public DbSet<Blogs> Blogs { get; set; }
 
+        public DbSet<Login> Login { get; set; }
         public DbSet<Project> Project { get; set; }
+        public DbSet<ProjectImg> ProjectImg { get; set; }
         public DbSet<Contact> Contact { get; set; }
     }
 }

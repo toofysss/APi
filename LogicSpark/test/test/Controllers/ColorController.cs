@@ -6,8 +6,8 @@ using test.Database;
 
 namespace test.Database
 {
-    [Controller]
-    [Route("controller")]
+    [ApiController]
+    [Route("[controller]")]
     public class ColorController : ControllerBase
     {
         private ApplicationDbContext _ColorController;
@@ -35,7 +35,7 @@ namespace test.Database
             }
 
             _ColorController.SaveChanges();
-            return Ok(_ColorController.ColorsSetting);
+            return Ok("Success");
         }
 
 
@@ -51,7 +51,7 @@ namespace test.Database
             {
                 _ColorController.ColorsSetting.Remove(ADid);
                 _ColorController.SaveChanges();
-                return Ok(_ColorController.ColorsSetting);
+                return Ok("Success");
             }
             else
             {
@@ -69,7 +69,7 @@ namespace test.Database
                 ADfromDb.Title = AdData.title;
                 _ColorController.ColorsSetting.Update(ADfromDb);
                 _ColorController.SaveChanges();
-                return Ok(_ColorController.ColorsSetting);
+                return Ok("Success");
             }
             else
             {

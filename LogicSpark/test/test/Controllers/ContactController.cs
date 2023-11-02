@@ -8,7 +8,7 @@ using test.Database;
 
 namespace test.Controllers
 {
-    [Controller]
+    [ApiController]
     [Route("[controller]")]
     public class ContactController : ControllerBase
     {
@@ -32,7 +32,7 @@ namespace test.Controllers
             {
                 _ContactController.Contact.Add(ContactData);
                 _ContactController.SaveChanges();
-                return Ok(_ContactController.Contact);
+                return Ok("Success");
             }
             else
             {
@@ -48,7 +48,7 @@ namespace test.Controllers
             {
                 _ContactController.Contact.Remove(ContactDataid);
                 _ContactController.SaveChanges();
-                return Ok(_ContactController.Contact);
+                return Ok("Success");
             }
             else
             {
@@ -75,7 +75,7 @@ namespace test.Controllers
                 ContactfromDb.Youtube = ContactData.Youtube;
                 _ContactController.Contact.Update(ContactfromDb);
                 _ContactController.SaveChanges();
-                return Ok(_ContactController.Contact);
+                return Ok("Success");
             }
             else
             {

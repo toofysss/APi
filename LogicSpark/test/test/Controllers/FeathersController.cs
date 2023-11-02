@@ -45,7 +45,7 @@ namespace test.Controllers
             {
                 _FeathersController.Features.Add(FeaturesData);
                 _FeathersController.SaveChanges();
-                return Ok(_FeathersController.Features);
+                return Ok("Success");
             }
             else
             {
@@ -61,7 +61,7 @@ namespace test.Controllers
             {
                 _FeathersController.Features.Remove(Featuresid);
                 _FeathersController.SaveChanges();
-                return Ok(_FeathersController.Features);
+                return Ok("Success");
             }
             else
             {
@@ -79,7 +79,7 @@ namespace test.Controllers
                 FeaturesfromDb.Dscrp = FeaturesData.Dscrp;
                 _FeathersController.Features.Update(FeaturesfromDb);
                 _FeathersController.SaveChanges();
-                return Ok(_FeathersController.Features);
+                return Ok("Success");
             }
             else
             {
