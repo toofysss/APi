@@ -27,6 +27,7 @@ namespace Notes.Controllers
                 {
                     id = c.id,
                     dscrp = c.Dscrp,
+                    SectionID = c.SectionID,
                     bg = c.bg,
                 }).ToList()
             });
@@ -44,20 +45,12 @@ namespace Notes.Controllers
             return Ok("Succses");
         }
       
-        [HttpPut("Update")]
-        public ActionResult<object> UpdateNotes(int id, [FromBody] DataNotes notes)
+        [HttpDelete("remove")]
+        public ActionResult<object> remove([FromBody] DataNotes notes)
         {
-            if (notes == null)return BadRequest("Bad Request");
-
-            var existingData = _DataController.DataNotes.FirstOrDefault(x => x.id == id);
-            if (existingData == null)return NotFound("Not Found");
-            
-            if (notes.Dscrp != null)existingData.Dscrp = notes.Dscrp;
-            
-            if (notes.bg != null)existingData.bg = notes.bg;
-            
-
-            _DataController.DataNotes.Update(existingData);
+            var SectionID = _DataController.DataNotes.FirstOrDefault(x => x.id == notes.id);
+            if (SectionID == null) return NotFound();
+            _DataController.DataNotes.Remove(SectionID);
             _DataController.SaveChanges();
             return Ok("Succses");
         }

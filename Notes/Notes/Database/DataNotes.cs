@@ -13,6 +13,6 @@ namespace Notes.Database
         public int id { get; set; }
         public int SectionID { get; set; }
         public string Dscrp { get; set; }
-        public byte[] bg { get; set; }
+        public string bg { get; set; }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tabark\\Desktop\\APi\\Notes\\Notes\\Notes.csproj": {}
+    "C:\\Users\\Tabark\\Desktop\\New folder\\APi\\Notes\\Notes\\Notes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tabark\\Desktop\\APi\\Notes\\Notes\\Notes.csproj": {
+    "C:\\Users\\Tabark\\Desktop\\New folder\\APi\\Notes\\Notes\\Notes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tabark\\Desktop\\APi\\Notes\\Notes\\Notes.csproj",
+        "projectUniqueName": "C:\\Users\\Tabark\\Desktop\\New folder\\APi\\Notes\\Notes\\Notes.csproj",
         "projectName": "Notes",
-        "projectPath": "C:\\Users\\Tabark\\Desktop\\APi\\Notes\\Notes\\Notes.csproj",
+        "projectPath": "C:\\Users\\Tabark\\Desktop\\New folder\\APi\\Notes\\Notes\\Notes.csproj",
         "packagesPath": "C:\\Users\\Tabark\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tabark\\Desktop\\APi\\Notes\\Notes\\obj\\",
+        "outputPath": "C:\\Users\\Tabark\\Desktop\\New folder\\APi\\Notes\\Notes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

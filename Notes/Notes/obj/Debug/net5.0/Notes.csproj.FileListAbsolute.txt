@@ -5,7 +5,6 @@ C:\Users\Tabark\Desktop\APi\Notes\Notes\bin\Debug\net5.0\Notes.deps.json
 C:\Users\Tabark\Desktop\APi\Notes\Notes\bin\Debug\net5.0\Notes.runtimeconfig.json
 C:\Users\Tabark\Desktop\APi\Notes\Notes\bin\Debug\net5.0\Notes.runtimeconfig.dev.json
 C:\Users\Tabark\Desktop\APi\Notes\Notes\bin\Debug\net5.0\Notes.dll
-C:\Users\Tabark\Desktop\APi\Notes\Notes\bin\Debug\net5.0\ref\Notes.dll
 C:\Users\Tabark\Desktop\APi\Notes\Notes\bin\Debug\net5.0\Notes.pdb
 C:\Users\Tabark\Desktop\APi\Notes\Notes\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
 C:\Users\Tabark\Desktop\APi\Notes\Notes\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
@@ -49,7 +48,6 @@ C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\Notes.csproj.CoreCompil
 C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\Notes.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\Notes.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\staticwebassets\Notes.StaticWebAssets.Manifest.cache
-C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\staticwebassets\Notes.StaticWebAssets.xml
 C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\scopedcss\bundle\Notes.styles.css
 C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\Notes.RazorTargetAssemblyInfo.cache
 C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\Notes.csproj.CopyComplete
@@ -57,3 +55,5 @@ C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\Notes.dll
 C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\ref\Notes.dll
 C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\Notes.pdb
 C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\Notes.genruntimeconfig.cache
+C:\Users\Tabark\Desktop\APi\Notes\Notes\bin\Debug\net5.0\ref\Notes.dll
+C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\staticwebassets\Notes.StaticWebAssets.xml
