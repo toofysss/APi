@@ -19,7 +19,7 @@ namespace test.Controllers
             _ContactController = logger;
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public ActionResult<Contact> Get()
         {
             return Ok(_ContactController.Contact);

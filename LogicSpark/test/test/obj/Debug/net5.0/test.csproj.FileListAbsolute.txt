@@ -140,64 +140,60 @@ C:\Users\musta\Desktop\APi\LogicSpark\test\test\obj\Debug\net5.0\ref\test.dll
 C:\Users\musta\Desktop\APi\LogicSpark\test\test\obj\Debug\net5.0\test.pdb
 C:\Users\musta\Desktop\APi\LogicSpark\test\test\obj\Debug\net5.0\test.genruntimeconfig.cache
 C:\Users\musta\Desktop\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\appsettings.json
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\test.exe
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\test.deps.json
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\test.runtimeconfig.json
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\test.runtimeconfig.dev.json
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\test.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\test.pdb
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\BouncyCastle.Cryptography.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Google.Protobuf.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\K4os.Compression.LZ4.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\K4os.Compression.LZ4.Streams.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\K4os.Hash.xxHash.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\MySql.Data.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\MySqlConnector.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\System.IO.Pipelines.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Text.Encodings.Web.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Text.Json.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\ZstdSharp.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win-x64\native\comerr64.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win-x64\native\gssapi64.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win-x64\native\k5sprt64.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win-x64\native\krb5_64.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win-x64\native\krbcc64.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.csproj.AssemblyReference.cache
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.AssemblyInfoInputs.cache
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.AssemblyInfo.cs
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.csproj.CoreCompileInputs.cache
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\staticwebassets\test.StaticWebAssets.Manifest.cache
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\scopedcss\bundle\test.styles.css
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.RazorTargetAssemblyInfo.cache
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.csproj.CopyComplete
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\ref\test.dll
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.pdb
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\test.genruntimeconfig.cache
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\staticwebassets\test.StaticWebAssets.Pack.cache
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\staticwebassets\msbuild.test.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\staticwebassets\msbuild.build.test.props
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.test.props
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.test.props
-C:\Users\Tabark\Desktop\New folder\APi\LogicSpark\test\test\obj\Debug\net5.0\refint\test.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\appsettings.Development.json
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\appsettings.json
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\test.exe
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\test.deps.json
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\test.runtimeconfig.json
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\test.runtimeconfig.dev.json
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\test.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\ref\test.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\test.pdb
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\BouncyCastle.Cryptography.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Google.Protobuf.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\K4os.Compression.LZ4.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\K4os.Compression.LZ4.Streams.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\K4os.Hash.xxHash.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\MySql.Data.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\MySqlConnector.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\System.IO.Pipelines.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Text.Encodings.Web.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\System.Text.Json.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\ZstdSharp.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win-x64\native\comerr64.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win-x64\native\gssapi64.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win-x64\native\k5sprt64.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win-x64\native\krb5_64.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win-x64\native\krbcc64.dll
+D:\Project\APi\LogicSpark\test\test\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.csproj.AssemblyReference.cache
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.AssemblyInfoInputs.cache
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.AssemblyInfo.cs
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.csproj.CoreCompileInputs.cache
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.MvcApplicationPartsAssemblyInfo.cs
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.MvcApplicationPartsAssemblyInfo.cache
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\staticwebassets\test.StaticWebAssets.Manifest.cache
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\staticwebassets\test.StaticWebAssets.xml
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\scopedcss\bundle\test.styles.css
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.RazorTargetAssemblyInfo.cache
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.csproj.CopyComplete
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.dll
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\ref\test.dll
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.pdb
+D:\Project\APi\LogicSpark\test\test\obj\Debug\net5.0\test.genruntimeconfig.cache

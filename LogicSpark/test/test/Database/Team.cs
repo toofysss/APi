@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace test.Database
 {
+    [Table("team")]
     public class Team
     {
         public int Id { get; set; }
@@ -17,7 +18,7 @@ namespace test.Database
 
         public Social Social { get; set; }
     }
-
+    [Table("social")]
     public class Social
     {
         public int id { get; set; }

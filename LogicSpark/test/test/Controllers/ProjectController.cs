@@ -22,7 +22,7 @@ namespace test.Controllers
         }
 
 
-        [HttpGet()]
+        [HttpGet("GetAll")]
         public async Task<ActionResult<IEnumerable<object>>> GetWebsiteInfos()
         {
             var projects = await _context.Project.Include(p => p.ProjectImg).Select(p => new

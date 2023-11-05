@@ -52,8 +52,10 @@ namespace test
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Logic Spark"));            
+                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Logic Spark"));
+
             app.Use(async (context, next) =>
             {
                 if (context.Request.Path == "/")
@@ -63,7 +65,7 @@ namespace test
                 }
                 await next();
             }
-            );
+        );
             app.UseHttpsRedirection();
 
             app.UseRouting();

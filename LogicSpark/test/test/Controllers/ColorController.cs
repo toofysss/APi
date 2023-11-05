@@ -17,7 +17,7 @@ namespace test.Database
             _ColorController = logger;
         }
 
-        [HttpPost()]
+        [HttpPost("Insert")]
         public ActionResult Post([FromBody] IEnumerable<Color> AdDataCollection)
         {
             foreach (var adData in AdDataCollection)
