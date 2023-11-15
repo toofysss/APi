@@ -2640,20 +2640,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\musta\\.nuget\\packages\\": {}
+    "C:\\Users\\Tabark\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\APi\\LogicSpark\\test\\test\\test.csproj",
+      "projectUniqueName": "E:\\Project\\APi\\LogicSpark\\test\\test\\test.csproj",
       "projectName": "test",
-      "projectPath": "D:\\Project\\APi\\LogicSpark\\test\\test\\test.csproj",
-      "packagesPath": "C:\\Users\\musta\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\APi\\LogicSpark\\test\\test\\obj\\",
+      "projectPath": "E:\\Project\\APi\\LogicSpark\\test\\test\\test.csproj",
+      "packagesPath": "C:\\Users\\Tabark\\.nuget\\packages\\",
+      "outputPath": "E:\\Project\\APi\\LogicSpark\\test\\test\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\musta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+        "C:\\Users\\Tabark\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2661,7 +2665,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Programing\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
