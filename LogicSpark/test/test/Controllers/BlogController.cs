@@ -19,7 +19,7 @@ namespace test.Controllers
 
 
         [HttpGet("GetAll")]
-        public async Task<IEnumerable<object>> GetTeamDataAsync()
+        public async Task<ActionResult<IEnumerable<Blogs>>> GetTeamDataAsync()
         {
             var teamData = await _context.Blogs.Include(t => t.Team).Select(p => new
             {
@@ -34,10 +34,10 @@ namespace test.Controllers
                     .ToList()
             }).ToListAsync();
 
-            return teamData;
+            return Ok(teamData);
         }
         [HttpGet("GetByID")]
-        public async Task<IEnumerable<object>> GetTeam(int id)
+        public async  Task<ActionResult<IEnumerable<Blogs>>> GetTeam(int id)
         {
             var teamData = await _context.Blogs
                 .Include(t => t.Team)
@@ -55,11 +55,11 @@ namespace test.Controllers
                     .ToList()
                 }).ToListAsync();
 
-            return teamData;
+            return Ok(teamData);
         }
 
         [HttpPost("InsertData")]
-        public async Task<ActionResult<IEnumerable<object>>> Insert([FromBody] Blogs blogs)
+        public async Task<ActionResult<IEnumerable<Blogs>>> Insert([FromBody] Blogs blogs)
         {
             if (!_context.Blogs.Any(ad => ad.id == blogs.id))
             {
