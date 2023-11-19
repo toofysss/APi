@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aODwbybMQk2LAWrDB42XMpGMvjytRgtcoa/5cQ//yw2lAGwHpz/L/kpJl/2t0JdUZDu2xKDNoihxDNKUUbyACw==",
+  "dgSpecHash": "a65i7fRBCCPm+RGIRxMX8FJTnmpf+e0w3jMwMWQoAmpUctqJxYYPgL985rMMsMhaThdILD90cEY63iYLm1xJaA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tabark\\Desktop\\New folder\\APi\\Notes\\Notes\\Notes.csproj",
+  "projectFilePath": "E:\\Project\\APi\\Notes\\Notes\\Notes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tabark\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Tabark\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
