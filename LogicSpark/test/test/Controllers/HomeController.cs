@@ -19,7 +19,7 @@ namespace test.Controllers
         }
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<object>> GetData()
+        public async Task<ActionResult<HomeData>> GetData()
         {
             try
             {

@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "k19MFyL4oGrM0i+7rqG6+CqtgMvJE9iEovqFd4R/UPjm1YI/1i/O7UEndFGspUqmbJtLequyAygfpVFOyWQ52g==",
+=======
   "dgSpecHash": "gIAHrEUY7C/iKP6iAhcKWudNNOdJPKihCmy7jZg/R/rdw3IgeuEU0v4wmIF3PF9i5K8I12Yj/2m2iGxwAZ+BwA==",
+>>>>>>> 28c619dc448ddac11f29b771c4d16ed73e44ea4e
   "success": true,
   "projectFilePath": "E:\\Project\\APi\\LogicSpark\\test\\test\\test.csproj",
   "expectedPackageFiles": [

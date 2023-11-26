@@ -19,13 +19,13 @@ namespace test.Controllers
         }
 
         [HttpGet("GetAll")]
-        public IEnumerable<Features> Get()
+        public ActionResult<IEnumerable<Features>> Get()
         {
-            return _FeathersController.Features;
+            return Ok(_FeathersController.Features);
         }
 
         [HttpGet("GetByID")]
-        public ActionResult<Features> Get(int id)
+        public ActionResult<IEnumerable<Features>> Get(int id)
         {
             var getbyid = _FeathersController.Features.Where(Features => Features.Id == id);
             if (getbyid != null)
