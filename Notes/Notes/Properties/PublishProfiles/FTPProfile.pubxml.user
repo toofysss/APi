@@ -6,9 +6,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword />
-    <_PublishTargetUrl>ftp://198.37.116.29/www.Private.somee.com</_PublishTargetUrl>
-    <History>True|2023-11-03T02:12:58.5900333Z;False|2023-11-03T05:09:47.1016029+03:00;True|2023-11-03T03:33:14.8881376+03:00;False|2023-11-03T03:30:02.8817546+03:00;True|2023-11-03T03:06:17.8248281+03:00;True|2023-11-03T03:02:22.2027961+03:00;</History>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWmnyZXkd7UKZaBI6/0CpEgAAAAACAAAAAAAQZgAAAAEAACAAAADq4miYCC2u1i3l5BXzY2sXOiy3dDMiTt7fPNcwhCTDsAAAAAAOgAAAAAIAACAAAADQ0rUDwz1Y/3rOIM/iZ09V5TydSoG7x+DHt3FIWjIqGiAAAAAJnGcyDz57566wgDIiX+D0FohWGofavUBa5GGaCBniuUAAAACbTT40oiEPwp2yvOhHzdKELPABfUd1aRFLiz5+WhxC3pVAm+UW0rhZxDYBu2mqbQ3SxwxMQV7CfkPeiXPfZQXY</EncryptedPassword>
+    <_PublishTargetUrl>ftp://198.37.116.26/www.testinglaw.somee.com</_PublishTargetUrl>
+    <History>False|2023-11-25T23:06:07.6306667Z;True|2023-11-03T05:12:58.5900333+03:00;False|2023-11-03T05:09:47.1016029+03:00;True|2023-11-03T03:33:14.8881376+03:00;False|2023-11-03T03:30:02.8817546+03:00;True|2023-11-03T03:06:17.8248281+03:00;True|2023-11-03T03:02:22.2027961+03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>ftp://141.136.33.200</_PublishTargetUrl>
+    <History>True|2023-11-25T09:29:09.5286691Z;True|2023-11-25T12:16:18.6132889+03:00;True|2023-11-25T12:10:46.8620001+03:00;False|2023-11-25T12:07:37.5067648+03:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>11/10/2023 15:01:09</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>11/10/2023 15:01:09</publishTime>
+    </File>
+    <File Include="BouncyCastle.Cryptography.dll">
+      <publishTime>04/21/2023 15:07:00</publishTime>
+    </File>
+    <File Include="Google.Protobuf.dll">
+      <publishTime>10/26/2022 16:46:18</publishTime>
+    </File>
+    <File Include="K4os.Compression.LZ4.dll">
+      <publishTime>01/06/2023 20:16:12</publishTime>
+    </File>
+    <File Include="K4os.Compression.LZ4.Streams.dll">
+      <publishTime>01/06/2023 20:16:12</publishTime>
+    </File>
+    <File Include="K4os.Hash.xxHash.dll">
+      <publishTime>11/08/2022 21:08:14</publishTime>
+    </File>
+    <File Include="Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>06/21/2023 13:16:52</publishTime>
+    </File>
+    <File Include="Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>10/18/2022 19:14:58</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <publishTime>10/13/2021 21:48:08</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.dll">
+      <publishTime>10/13/2021 21:48:20</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Relational.dll">
+      <publishTime>03/11/2021 21:36:28</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.DependencyInjection.dll">
+      <publishTime>06/15/2021 22:12:46</publishTime>
+    </File>
+    <File Include="Microsoft.OpenApi.dll">
+      <publishTime>08/29/2020 23:14:12</publishTime>
+    </File>
+    <File Include="MySql.Data.dll">
+      <publishTime>10/01/2023 05:51:56</publishTime>
+    </File>
+    <File Include="MySqlConnector.dll">
+      <publishTime>04/24/2021 17:23:14</publishTime>
+    </File>
+    <File Include="Pomelo.EntityFrameworkCore.MySql.dll">
+      <publishTime>04/28/2021 23:49:52</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/comerr64.dll">
+      <publishTime>10/01/2023 05:49:52</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/gssapi64.dll">
+      <publishTime>10/01/2023 05:49:52</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/k5sprt64.dll">
+      <publishTime>10/01/2023 05:49:52</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/krb5_64.dll">
+      <publishTime>10/01/2023 05:49:52</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/krbcc64.dll">
+      <publishTime>10/01/2023 05:49:52</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>07/19/2017 13:01:34</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.Swagger.dll">
+      <publishTime>09/23/2020 15:47:20</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerGen.dll">
+      <publishTime>09/23/2020 15:47:22</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
+      <publishTime>09/23/2020 15:47:24</publishTime>
+    </File>
+    <File Include="System.Configuration.ConfigurationManager.dll">
+      <publishTime>11/20/2017 21:09:04</publishTime>
+    </File>
+    <File Include="System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>02/16/2023 03:44:28</publishTime>
+    </File>
+    <File Include="System.IO.Pipelines.dll">
+      <publishTime>04/13/2022 20:49:36</publishTime>
+    </File>
+    <File Include="System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>10/23/2021 02:40:56</publishTime>
+    </File>
+    <File Include="System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>07/19/2017 13:01:34</publishTime>
+    </File>
+    <File Include="System.Text.Encodings.Web.dll">
+      <publishTime>10/18/2022 19:31:50</publishTime>
+    </File>
+    <File Include="System.Text.Json.dll">
+      <publishTime>11/18/2022 19:32:44</publishTime>
+    </File>
+    <File Include="test.deps.json">
+      <publishTime>11/25/2023 12:27:31</publishTime>
+    </File>
+    <File Include="test.dll">
+      <publishTime>11/25/2023 12:27:31</publishTime>
+    </File>
+    <File Include="test.exe">
+      <publishTime>11/25/2023 12:27:31</publishTime>
+    </File>
+    <File Include="test.pdb">
+      <publishTime>11/25/2023 12:27:31</publishTime>
+    </File>
+    <File Include="test.runtimeconfig.json">
+      <publishTime>11/25/2023 12:04:58</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>11/25/2023 12:27:45</publishTime>
+    </File>
+    <File Include="ZstdSharp.dll">
+      <publishTime>04/06/2023 15:25:30</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
