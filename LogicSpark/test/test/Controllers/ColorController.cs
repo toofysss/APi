@@ -30,7 +30,7 @@ namespace test.Database
                 {
                     adData.WebsiteinfoId = lastid.Id;
                 }
-
+              
                 _ColorController.ColorsSetting.Add(adData);
             }
 
@@ -60,13 +60,13 @@ namespace test.Database
         }
 
         [HttpPut("UPDATE")]
-        public IActionResult Update(int id, [FromBody] AD AdData)
+        public IActionResult Update( [FromBody] AD AdData)
         {
-            var ADfromDb = _ColorController.ColorsSetting.FirstOrDefault(x => x.Id == id);
+            var ADfromDb = _ColorController.ColorsSetting.FirstOrDefault(x => x.Id == AdData.Id);
             if (ADfromDb != null)
             {
-                ADfromDb.Dscrp = AdData.Dscrp;
-                ADfromDb.Title = AdData.title;
+               if(AdData.Dscrp !=null) ADfromDb.Dscrp = AdData.Dscrp;
+                if (AdData.title != null) ADfromDb.Title = AdData.title;
                 _ColorController.ColorsSetting.Update(ADfromDb);
                 _ColorController.SaveChanges();
                 return Ok("Success");

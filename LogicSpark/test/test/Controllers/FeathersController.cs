@@ -43,6 +43,7 @@ namespace test.Controllers
         {
             if (!_FeathersController.Features.Any(Features => Features.Id == FeaturesData.Id))
             {
+                FeaturesData.Id= 0;
                 _FeathersController.Features.Add(FeaturesData);
                 _FeathersController.SaveChanges();
                 return Ok("Success");
@@ -70,13 +71,13 @@ namespace test.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update(int id, [FromBody] Features FeaturesData)
+        public IActionResult Update( [FromBody] Features FeaturesData)
         {
-            var FeaturesfromDb = _FeathersController.Features.FirstOrDefault(x => x.Id == id);
+            var FeaturesfromDb = _FeathersController.Features.FirstOrDefault(x => x.Id == FeaturesData.Id);
             if (FeaturesfromDb != null)
             {
-                FeaturesfromDb.Img = FeaturesData.Img;
-                FeaturesfromDb.Dscrp = FeaturesData.Dscrp;
+            if (FeaturesData.Img !=null)    FeaturesfromDb.Img = FeaturesData.Img;
+                if (FeaturesData.Dscrp != null) FeaturesfromDb.Dscrp = FeaturesData.Dscrp;
                 _FeathersController.Features.Update(FeaturesfromDb);
                 _FeathersController.SaveChanges();
                 return Ok("Success");

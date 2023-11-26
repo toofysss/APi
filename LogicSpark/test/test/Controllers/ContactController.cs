@@ -30,6 +30,7 @@ namespace test.Controllers
         {
             if (!_ContactController.Contact.Any(ad => ad.id == ContactData.id))
             {
+                ContactData.id= 0;
                 _ContactController.Contact.Add(ContactData);
                 _ContactController.SaveChanges();
                 return Ok("Success");
@@ -57,22 +58,22 @@ namespace test.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update(int id, [FromBody] Contact ContactData)
+        public IActionResult Update( [FromBody] Contact ContactData)
         {
-            var ContactfromDb = _ContactController.Contact.FirstOrDefault(x => x.id == id);
+            var ContactfromDb = _ContactController.Contact.FirstOrDefault(x => x.id == ContactData.id);
             if (ContactfromDb != null)
             {
-                ContactfromDb.Instagram = ContactData.Instagram;
-                ContactfromDb.Telegram = ContactData.Telegram;
-                ContactfromDb.Threads = ContactData.Threads;
-                ContactfromDb.Email = ContactData.Email;
-                ContactfromDb.Linkedin = ContactData.Linkedin;
-                ContactfromDb.Location = ContactData.Location;
-                ContactfromDb.phoneNumber = ContactData.phoneNumber;
-                ContactfromDb.Tiktok = ContactData.Tiktok;
-                ContactfromDb.Twitter = ContactData.Twitter;
-                ContactfromDb.Whatsapp = ContactData.Whatsapp;
-                ContactfromDb.Youtube = ContactData.Youtube;
+               if(ContactData.Instagram !=null) ContactfromDb.Instagram = ContactData.Instagram;
+                if (ContactData.Telegram != null) ContactfromDb.Telegram = ContactData.Telegram;
+                if (ContactData.Threads != null) ContactfromDb.Threads = ContactData.Threads;
+                if (ContactData.Email != null) ContactfromDb.Email = ContactData.Email;
+                if (ContactData.Linkedin != null) ContactfromDb.Linkedin = ContactData.Linkedin;
+                if (ContactData.Location != null) ContactfromDb.Location = ContactData.Location;
+                if (ContactData.phoneNumber != null) ContactfromDb.phoneNumber = ContactData.phoneNumber;
+                if (ContactData.Tiktok != null) ContactfromDb.Tiktok = ContactData.Tiktok;
+                if (ContactData.Twitter != null) ContactfromDb.Twitter = ContactData.Twitter;
+                if (ContactData.Whatsapp != null) ContactfromDb.Whatsapp = ContactData.Whatsapp;
+                if (ContactData.Youtube != null) ContactfromDb.Youtube = ContactData.Youtube;
                 _ContactController.Contact.Update(ContactfromDb);
                 _ContactController.SaveChanges();
                 return Ok("Success");

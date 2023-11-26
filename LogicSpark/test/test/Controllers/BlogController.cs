@@ -63,6 +63,7 @@ namespace test.Controllers
         {
             if (!_context.Blogs.Any(ad => ad.id == blogs.id))
             {
+                blogs.id= 0;
                 _context.Blogs.Add(blogs);
                 _context.SaveChanges();
                 return Ok("Success");
@@ -90,15 +91,15 @@ namespace test.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update(int id, [FromBody] Blogs blogs)
+        public IActionResult Update( [FromBody] Blogs blogs)
         {
-            var ADfromDb = _context.Blogs.FirstOrDefault(x => x.id == id);
+            var ADfromDb = _context.Blogs.FirstOrDefault(x => x.id == blogs.id);
             if (ADfromDb != null)
             {
-                ADfromDb.img = blogs.img;
-                ADfromDb.Dscrp = blogs.Dscrp;
-                ADfromDb.title = blogs.title;
-                ADfromDb.TeamID = blogs.TeamID;
+             if(blogs.img !=null)   ADfromDb.img = blogs.img;
+                if (blogs.Dscrp != null) ADfromDb.Dscrp = blogs.Dscrp;
+                if (blogs.title != null) ADfromDb.title = blogs.title;
+                if (blogs.TeamID != null) ADfromDb.TeamID = blogs.TeamID;
 
                 _context.Blogs.Update(ADfromDb);
                 _context.SaveChanges();

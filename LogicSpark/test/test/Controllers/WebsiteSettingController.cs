@@ -31,6 +31,7 @@ namespace test.Controllers
             if (!_context.Websiteinfo.Any(ad => ad.Id == WebsiteinfoData.Id))
             {
                 WebsiteinfoData.ColorsSetting = null;
+                WebsiteinfoData.Id = 0;
                 _context.Websiteinfo.Add(WebsiteinfoData);
                 _context.SaveChanges();
                 return Ok("Success");
@@ -58,14 +59,14 @@ namespace test.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update(int id, [FromBody] Websiteinfo AdData)
+        public IActionResult Update( [FromBody] Websiteinfo AdData)
         {
-            var ADfromDb = _context.Websiteinfo.FirstOrDefault(x => x.Id == id);
+            var ADfromDb = _context.Websiteinfo.FirstOrDefault(x => x.Id == AdData.Id);
             if (ADfromDb != null)
             {
-                ADfromDb.Dscrp = AdData.Dscrp;
-                ADfromDb.Logoimg = AdData.Logoimg;
-                ADfromDb.ColorsSetting = null;
+               if(AdData.Dscrp !=null) ADfromDb.Dscrp = AdData.Dscrp;
+                if (AdData.Logoimg != null) ADfromDb.Logoimg = AdData.Logoimg;
+                if (AdData.ColorsSetting != null) ADfromDb.ColorsSetting = null;
                 _context.Websiteinfo.Update(ADfromDb);
                 _context.SaveChanges();
                 return Ok("Success");

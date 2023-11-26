@@ -24,7 +24,7 @@ namespace test.Controllers
         }
 
         [HttpGet("GetAll")]
-        public async Task<IEnumerable<object>> GetTeamDataAsync()
+        public async Task<ActionResult<IEnumerable<Team>>> GetTeamDataAsync()
         {
             var teamData = await _TeamController.Team.Include(t => t.Social).Select(t => new
                 {
@@ -37,14 +37,14 @@ namespace test.Controllers
                     social = _TeamController.Social.Where(p => p.id == t.SocialID).ToList()
                 }).ToListAsync();
 
-            return teamData;
+            return Ok(teamData);
         }
 
 
 
 
         [HttpGet("GetByID")]
-        public async Task<IEnumerable<object>> GetTeam(int id)
+        public async Task<ActionResult<IEnumerable<Team>>> GetTeam(int id)
         {
             var teamData = await _TeamController.Team
                 .Include(t => t.Social)
@@ -61,11 +61,11 @@ namespace test.Controllers
                 })
                 .ToListAsync();
 
-            return teamData;
+            return Ok(teamData);
         }
 
         [HttpPost("InsertData")]
-        public async Task<ActionResult<IEnumerable<object>>> Insert([FromBody] InsertDataTeam insertDataDto)
+        public async Task<ActionResult<IEnumerable<Team>>> Insert([FromBody] InsertDataTeam insertDataDto)
         {
             if (insertDataDto == null)
             {
@@ -78,7 +78,7 @@ namespace test.Controllers
             {
                 return BadRequest();
             }
-
+            team.Id= 0;
             _TeamController.Social.Add(social);
             _TeamController.SaveChanges();
 
@@ -93,23 +93,23 @@ namespace test.Controllers
         }
 
         [HttpPut("UpdateData")]
-        public async Task<ActionResult<IEnumerable<object>>> Update(int id, [FromBody] Team UpdateDataDto)
+        public async Task<ActionResult<IEnumerable<Team>>> Update([FromBody] Team UpdateDataDto)
         {
-        var Teamid=_TeamController.Team.FirstOrDefault(x => x.Id == id);
-            Teamid.job = UpdateDataDto.job;
-            Teamid.name = UpdateDataDto.name;
-            Teamid.Profileimg = UpdateDataDto.Profileimg;
-            Teamid.title = UpdateDataDto.title;
+        var Teamid=_TeamController.Team.FirstOrDefault(x => x.Id == UpdateDataDto.Id);
+          if(UpdateDataDto.job !=null)  Teamid.job = UpdateDataDto.job;
+            if (UpdateDataDto.name != null) Teamid.name = UpdateDataDto.name;
+            if (UpdateDataDto.Profileimg != null) Teamid.Profileimg = UpdateDataDto.Profileimg;
+            if (UpdateDataDto.title != null) Teamid.title = UpdateDataDto.title;
             if (UpdateDataDto == null|| Teamid==null) return BadRequest();
             var socialID = _TeamController.Social.FirstOrDefault(x => x.id == UpdateDataDto.SocialID);
-            socialID.Instagram = UpdateDataDto.Social.Instagram;
-            socialID.Linkedin = UpdateDataDto.Social.Linkedin;
-            socialID.Telegram = UpdateDataDto.Social.Telegram;
-            socialID.Threads = UpdateDataDto.Social.Threads;
-            socialID.Tiktok = UpdateDataDto.Social.Tiktok;
-            socialID.Twitter = UpdateDataDto.Social.Twitter;
-            socialID.Whatsapp = UpdateDataDto.Social.Whatsapp;
-            socialID.Youtube = UpdateDataDto.Social.Youtube;
+            if (UpdateDataDto.Social.Instagram != null) socialID.Instagram = UpdateDataDto.Social.Instagram;
+            if (UpdateDataDto.Social.Linkedin != null) socialID.Linkedin = UpdateDataDto.Social.Linkedin;
+            if (UpdateDataDto.Social.Telegram != null) socialID.Telegram = UpdateDataDto.Social.Telegram;
+            if (UpdateDataDto.Social.Threads != null) socialID.Threads = UpdateDataDto.Social.Threads;
+            if (UpdateDataDto.Social.Tiktok != null) socialID.Tiktok = UpdateDataDto.Social.Tiktok;
+            if (UpdateDataDto.Social.Twitter != null) socialID.Twitter = UpdateDataDto.Social.Twitter;
+            if (UpdateDataDto.Social.Whatsapp != null) socialID.Whatsapp = UpdateDataDto.Social.Whatsapp;
+            if (UpdateDataDto.Social.Youtube != null) socialID.Youtube = UpdateDataDto.Social.Youtube;
 
             _TeamController.Social.Update(socialID);
             _TeamController.Team.Update(Teamid);
@@ -119,7 +119,7 @@ namespace test.Controllers
         }
 
         [HttpDelete("DeleteData")]
-        public async Task<ActionResult<IEnumerable<object>>> Delete(int id)
+        public async Task<ActionResult<IEnumerable<Team>>> Delete(int id)
         {
             var ADid = _TeamController.Team.Find(id);
             if (ADid != null)

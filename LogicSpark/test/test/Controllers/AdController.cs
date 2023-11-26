@@ -44,6 +44,7 @@ namespace test.Controllers
         {
             if (!_adController.ad.Any(ad => ad.Id == AdData.Id))
             {
+                AdData.Id= 0;
                 _adController.ad.Add(AdData);
                 _adController.SaveChanges();
                 return Ok("Success");
@@ -71,14 +72,14 @@ namespace test.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update(int id, [FromBody] AD AdData)
+        public IActionResult Update( [FromBody] AD AdData)
         {
-            var ADfromDb = _adController.ad.FirstOrDefault(x => x.Id == id);
+            var ADfromDb = _adController.ad.FirstOrDefault(x => x.Id == AdData.Id);
             if (ADfromDb != null)
             {
-                ADfromDb.img = AdData.img;
-                ADfromDb.Link = AdData.Link;
-                ADfromDb.title = AdData.title;
+               if(AdData.img !=null) ADfromDb.img = AdData.img;
+                if (AdData.Link != null) ADfromDb.Link = AdData.Link;
+                if (AdData.title != null) ADfromDb.title = AdData.title;
                 _adController.ad.Update(ADfromDb);
                 _adController.SaveChanges();
                 return Ok("Success");

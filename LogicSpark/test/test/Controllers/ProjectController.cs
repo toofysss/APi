@@ -23,7 +23,7 @@ namespace test.Controllers
 
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<IEnumerable<object>>> GetWebsiteInfos()
+        public async Task<ActionResult<IEnumerable<Project>>> GetWebsiteInfos()
         {
             var projects = await _context.Project.Include(p => p.ProjectImg).Select(p => new
             {
@@ -39,11 +39,11 @@ namespace test.Controllers
                 .Where(t => t.Social.id == t.SocialID)
                 .ToList()
             }).ToListAsync();
-            return projects;
+            return Ok(projects);
         }
 
         [HttpGet("GetByID")]
-        public async Task<IEnumerable<object>> GetTeam(int id)
+        public async Task<ActionResult<IEnumerable<Project>>> GetTeam(int id)
         {
             var Project = await _context.Project
                 .Include(t => t.ProjectImg)
@@ -63,7 +63,7 @@ namespace test.Controllers
                      .ToList()
                  }).ToListAsync();
 
-            return Project;
+            return Ok(Project);
         }
 
         [HttpDelete("Delete")]
@@ -93,20 +93,20 @@ namespace test.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update(int id, [FromBody] Project project)
+        public IActionResult Update( [FromBody] Project project)
         {
-            var projectFromDb = _context.Project.FirstOrDefault(x => x.Id == id);
+            var projectFromDb = _context.Project.FirstOrDefault(x => x.Id == project.Id);
 
             if (projectFromDb == null) return NotFound();
 
-            projectFromDb.ProjectFile = project.ProjectFile;
-            projectFromDb.Link = project.Link;
-            projectFromDb.TeamID =project.TeamID;
-            projectFromDb.Dscrp = project.Dscrp;
-            projectFromDb.Details = project.Details;
+            if(project.ProjectFile !=null)   projectFromDb.ProjectFile = project.ProjectFile;
+            if (project.Link != null) projectFromDb.Link = project.Link;
+            if (project.TeamID != null) projectFromDb.TeamID =project.TeamID;
+            if (project.Dscrp != null) projectFromDb.Dscrp = project.Dscrp;
+            if (project.Details != null) projectFromDb.Details = project.Details;
             foreach (var projectImg in project.ProjectImg)
             {
-                var check = _context.ProjectImg.FirstOrDefault(pi => pi.Id == projectImg.Id && pi.ProjectId ==id);
+                var check = _context.ProjectImg.FirstOrDefault(pi => pi.Id == projectImg.Id && pi.ProjectId == project.Id);
                 if (check != null)
                 {
                     check.ProjectId = project.Id;
@@ -118,7 +118,7 @@ namespace test.Controllers
                     var newProjectImg = new ProjectImg
                     {
                         Id =0, 
-                        ProjectId = id, 
+                        ProjectId = project.Id, 
                         Dscrp = projectImg.Dscrp 
                     };
                     _context.ProjectImg.Add(newProjectImg);
@@ -137,7 +137,7 @@ namespace test.Controllers
         {
             if (project == null)
                 return BadRequest();
-
+            project.Id= 0;
             _context.Project.Add(project);
 
             foreach (var projectImg in project.ProjectImg)
