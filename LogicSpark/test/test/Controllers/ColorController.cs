@@ -10,7 +10,7 @@ namespace test.Database
     [Route("[controller]")]
     public class ColorController : ControllerBase
     {
-        private ApplicationDbContext _ColorController;
+        private readonly ApplicationDbContext _ColorController;
 
         public ColorController(ApplicationDbContext logger)
         {
@@ -44,7 +44,7 @@ namespace test.Database
 
 
         [HttpDelete("DELETE")]
-        public IActionResult delete(int id)
+        public IActionResult Delete(int id)
         {
             var ADid = _ColorController.ColorsSetting.Find(id);
             if (ADid != null)
@@ -60,14 +60,15 @@ namespace test.Database
         }
 
         [HttpPut("UPDATE")]
-        public IActionResult Update( [FromBody] AD AdData)
+        public IActionResult Update([FromBody] Color color)
         {
-            var ADfromDb = _ColorController.ColorsSetting.FirstOrDefault(x => x.Id == AdData.Id);
-            if (ADfromDb != null)
+            var AdDataCollection = _ColorController.ColorsSetting.FirstOrDefault(x => x.Id == color.Id);
+            if (AdDataCollection != null)
             {
-               if(AdData.Dscrp !=null) ADfromDb.Dscrp = AdData.Dscrp;
-                if (AdData.title != null) ADfromDb.Title = AdData.title;
-                _ColorController.ColorsSetting.Update(ADfromDb);
+               if(color.Dscrp !=null) AdDataCollection.Dscrp = color.Dscrp;
+               if (color.Title != null) AdDataCollection.Title = color.Title;
+               if (color.WebsiteinfoId >0) AdDataCollection.WebsiteinfoId = color.WebsiteinfoId;
+                _ColorController.ColorsSetting.Update(AdDataCollection);
                 _ColorController.SaveChanges();
                 return Ok("Success");
             }

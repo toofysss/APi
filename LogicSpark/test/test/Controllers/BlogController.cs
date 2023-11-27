@@ -12,7 +12,7 @@ namespace test.Controllers
     [Route("[controller]")]
     public class BlogController : ControllerBase
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public BlogController(ApplicationDbContext logger) => _context = logger;
 
@@ -23,14 +23,15 @@ namespace test.Controllers
         {
             var teamData = await _context.Blogs.Include(t => t.Team).Select(p => new
             {
-                id = p.id,
-                Dscrp = p.Dscrp,
-                title = p.title,
-                img = p.img,
+                p.Id,
+                p.Dscrp,
+                p.Title,
+                p.Img,
+                p.Date,
                 team= _context.Team
                     .Where(t => t.Id == p.TeamID)
                     .Include(t => t.Social)
-                    .Where(t => t.Social.id == t.SocialID)
+                    .Where(t => t.Social.Id == t.SocialID)
                     .ToList()
             }).ToListAsync();
 
@@ -41,17 +42,17 @@ namespace test.Controllers
         {
             var teamData = await _context.Blogs
                 .Include(t => t.Team)
-                .Where(t => t.id == id)
+                .Where(t => t.Id == id)
                 .Select(p => new
                 {
-                    id = p.id,
-                    Dscrp = p.Dscrp,
-                    title = p.title,
-                    img = p.img,
+                    p.Id,
+                    p.Dscrp,
+                    p.Title,
+                    p.Img,
                     team = _context.Team
                     .Where(t => t.Id == p.TeamID)
                     .Include(t => t.Social)
-                    .Where(t => t.Social.id == t.SocialID)
+                    .Where(t => t.Social.Id == t.SocialID)
                     .ToList()
                 }).ToListAsync();
 
@@ -59,11 +60,11 @@ namespace test.Controllers
         }
 
         [HttpPost("InsertData")]
-        public async Task<ActionResult<IEnumerable<Blogs>>> Insert([FromBody] Blogs blogs)
+        public ActionResult<IEnumerable<Blogs>> Insert([FromBody] Blogs blogs)
         {
-            if (!_context.Blogs.Any(ad => ad.id == blogs.id))
+            if (!_context.Blogs.Any(ad => ad.Id == blogs.Id))
             {
-                blogs.id= 0;
+                blogs.Id= 0;
                 _context.Blogs.Add(blogs);
                 _context.SaveChanges();
                 return Ok("Success");
@@ -75,7 +76,7 @@ namespace test.Controllers
 
         }
         [HttpDelete("Delete")]
-        public IActionResult delete(int id)
+        public IActionResult Delete(int id)
         {
             var ADid = _context.Blogs.Find(id);
             if (ADid != null)
@@ -93,22 +94,18 @@ namespace test.Controllers
         [HttpPut("Update")]
         public IActionResult Update( [FromBody] Blogs blogs)
         {
-            var ADfromDb = _context.Blogs.FirstOrDefault(x => x.id == blogs.id);
-            if (ADfromDb != null)
-            {
-             if(blogs.img !=null)   ADfromDb.img = blogs.img;
-                if (blogs.Dscrp != null) ADfromDb.Dscrp = blogs.Dscrp;
-                if (blogs.title != null) ADfromDb.title = blogs.title;
-                if (blogs.TeamID != null) ADfromDb.TeamID = blogs.TeamID;
+            var ADfromDb = _context.Blogs.FirstOrDefault(x => x.Id == blogs.Id);
+            if (ADfromDb == null) NotFound();
+            if (blogs.Title != null) ADfromDb.Title = blogs.Title;
+            if (blogs.Dscrp != null) ADfromDb.Dscrp = blogs.Dscrp;
+            if (blogs.Img !=null)   ADfromDb.Img = blogs.Img;
+            if (blogs.Date != null) ADfromDb.Date = blogs.Date;
+            if (blogs.TeamID >0) ADfromDb.TeamID = blogs.TeamID;
 
                 _context.Blogs.Update(ADfromDb);
                 _context.SaveChanges();
                 return Ok("Success");
-            }
-            else
-            {
-                return NotFound();
-            }
+
         }
     }
    

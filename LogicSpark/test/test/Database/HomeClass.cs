@@ -11,7 +11,7 @@ namespace test.Database
         public List<Features> Features { get; set; }
         public List<Team> Team { get; set; }
         public List<Project> Project { get; set; }
-        public List<Contact> contact { get; set; }
+        public List<Contact> Contact { get; set; }
         public List<Websiteinfo> WebsiteSetting { get; set; }
     }
 

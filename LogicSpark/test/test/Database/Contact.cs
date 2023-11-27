@@ -10,10 +10,10 @@ namespace test
     [Table("contact")]
     public class Contact
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string Email { get; set; }
         public string Location { get; set;}
-        public string phoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public string Instagram { get; set; }
         public string Telegram { get; set; }
         public string Youtube { get; set; }

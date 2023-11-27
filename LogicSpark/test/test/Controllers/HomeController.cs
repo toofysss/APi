@@ -23,30 +23,30 @@ namespace test.Controllers
         {
             try
             {
-                var adData = await _context.ad.ToListAsync();
+                var adData = await _context.Ad.ToListAsync();
                 var featuresData = await _context.Features.ToListAsync();
                 var teamData = await _context.Team.Include(t => t.Social).Select(t => new
                 {
                     id = t.Id,
-                    name = t.name,
-                    title = t.title,
-                    job = t.job,
+                    name = t.Name,
+                    title = t.Title,
+                    job = t.Job,
                     img = t.Profileimg,
                     projects = _context.Project.Where(p => p.Team.Id == t.Id).ToList(),
-                    social = _context.Social.Where(p => p.id == t.SocialID).ToList()
+                    social = _context.Social.Where(p => p.Id == t.SocialID).ToList()
                 }).ToListAsync();
                 var projectData =  await _context.Project.Include(p => p.ProjectImg).Select(p => new
                 {
-                    Id = p.Id,
-                    Dscrp = p.Dscrp,
-                    Details = p.Details,
-                    Link = p.Link,
-                    ProjectFile = p.ProjectFile,
+                    p.Id,
+                    p.Dscrp,
+                    p.Details,
+                    p.Link,
+                    p.ProjectFile,
                     ProjectImg = _context.ProjectImg.Where(pi => pi.ProjectId == p.Id).ToList(),
                     Team = _context.Team
                     .Where(t => t.Id == p.TeamID)
                     .Include(t => t.Social)
-                    .Where(t => t.Social.id == t.SocialID)
+                    .Where(t => t.Social.Id == t.SocialID)
                     .ToList()   
                 }).ToListAsync();
                 var contactData = await _context.Contact.ToListAsync();

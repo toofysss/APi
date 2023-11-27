@@ -10,9 +10,9 @@ namespace test.Database
     public class Team
     {
         public int Id { get; set; }
-        public string name { get; set; }
-        public string title { get; set; }
-        public string job { get; set; }
+        public string Name { get; set; }
+        public string Title { get; set; }
+        public string Job { get; set; }
         public string Profileimg { get; set; }
         public int SocialID { get; set; }
 
@@ -21,7 +21,7 @@ namespace test.Database
     [Table("social")]
     public class Social
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string Instagram { get; set; }
         public string Telegram { get; set; }
         public string Youtube { get; set; }
@@ -34,7 +34,7 @@ namespace test.Database
     }
 
     [Table("projects")]
-    public class projects
+    public class Projects
     {
         public int Id { get; set; }
         public string Dscrp { get; set; }

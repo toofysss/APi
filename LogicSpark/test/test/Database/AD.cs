@@ -10,10 +10,10 @@ namespace test
     public class AD
     {
         public int Id { get; set; }
-        public string title { get; set; }
+        public string Title { get; set; }
         public string Dscrp { get; set; }
         public string Link { get; set; }
-        public string img { get; set; }
-        public string bg { get; set; }
+        public string Img { get; set; }
+        public string Bg { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace test.Controllers
         {
             if (!_context.Websiteinfo.Any(ad => ad.Id == WebsiteinfoData.Id))
             {
-                WebsiteinfoData.ColorsSetting = null;
+                WebsiteinfoData.ColorsSetting = WebsiteinfoData.ColorsSetting;
                 WebsiteinfoData.Id = 0;
                 _context.Websiteinfo.Add(WebsiteinfoData);
                 _context.SaveChanges();
@@ -43,7 +43,7 @@ namespace test.Controllers
         }
 
         [HttpDelete("Delete")]
-        public IActionResult delete(int id)
+        public IActionResult Delete(int id)
         {
             var ADid = _context.Websiteinfo.Find(id);
             if (ADid != null)
@@ -62,20 +62,16 @@ namespace test.Controllers
         public IActionResult Update( [FromBody] Websiteinfo AdData)
         {
             var ADfromDb = _context.Websiteinfo.FirstOrDefault(x => x.Id == AdData.Id);
-            if (ADfromDb != null)
-            {
+            if (ADfromDb == null) return NotFound();
+            
                if(AdData.Dscrp !=null) ADfromDb.Dscrp = AdData.Dscrp;
-                if (AdData.Logoimg != null) ADfromDb.Logoimg = AdData.Logoimg;
-                if (AdData.ColorsSetting != null) ADfromDb.ColorsSetting = null;
-                _context.Websiteinfo.Update(ADfromDb);
-                _context.SaveChanges();
-                return Ok("Success");
-            }
-            else
-            {
-                return NotFound();
-            }
+               if (AdData.Logoimg != null) ADfromDb.Logoimg = AdData.Logoimg;
+               if (AdData.ColorsSetting != null) ADfromDb.ColorsSetting = null;
+               _context.Websiteinfo.Update(ADfromDb);
+               _context.SaveChanges();
+               return Ok("Success");
+           
         }
       
-        }
+    }
 }

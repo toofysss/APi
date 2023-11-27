@@ -28,9 +28,9 @@ namespace test.Controllers
         [HttpPost("Insert")]
         public IActionResult Post([FromBody] Contact ContactData)
         {
-            if (!_ContactController.Contact.Any(ad => ad.id == ContactData.id))
+            if (!_ContactController.Contact.Any(ad => ad.Id == ContactData.Id))
             {
-                ContactData.id= 0;
+                ContactData.Id= 0;
                 _ContactController.Contact.Add(ContactData);
                 _ContactController.SaveChanges();
                 return Ok("Success");
@@ -42,7 +42,7 @@ namespace test.Controllers
         }
 
         [HttpDelete("Delete")]
-        public IActionResult delete(int id)
+        public IActionResult Delete(int id)
         {
             var ContactDataid = _ContactController.Contact.Find(id);
             if (ContactDataid != null)
@@ -60,7 +60,7 @@ namespace test.Controllers
         [HttpPut("Update")]
         public IActionResult Update( [FromBody] Contact ContactData)
         {
-            var ContactfromDb = _ContactController.Contact.FirstOrDefault(x => x.id == ContactData.id);
+            var ContactfromDb = _ContactController.Contact.FirstOrDefault(x => x.Id == ContactData.Id);
             if (ContactfromDb != null)
             {
                if(ContactData.Instagram !=null) ContactfromDb.Instagram = ContactData.Instagram;
@@ -68,8 +68,9 @@ namespace test.Controllers
                 if (ContactData.Threads != null) ContactfromDb.Threads = ContactData.Threads;
                 if (ContactData.Email != null) ContactfromDb.Email = ContactData.Email;
                 if (ContactData.Linkedin != null) ContactfromDb.Linkedin = ContactData.Linkedin;
+                if (ContactData.Facebook != null) ContactfromDb.Facebook = ContactData.Facebook;
                 if (ContactData.Location != null) ContactfromDb.Location = ContactData.Location;
-                if (ContactData.phoneNumber != null) ContactfromDb.phoneNumber = ContactData.phoneNumber;
+                if (ContactData.PhoneNumber != null) ContactfromDb.PhoneNumber = ContactData.PhoneNumber;
                 if (ContactData.Tiktok != null) ContactfromDb.Tiktok = ContactData.Tiktok;
                 if (ContactData.Twitter != null) ContactfromDb.Twitter = ContactData.Twitter;
                 if (ContactData.Whatsapp != null) ContactfromDb.Whatsapp = ContactData.Whatsapp;

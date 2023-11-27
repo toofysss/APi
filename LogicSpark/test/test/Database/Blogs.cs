@@ -9,12 +9,12 @@ namespace test.Database
     [Table("blogs")]
     public class Blogs
     {
-        public int id { get; set; }
-        public string title { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
         public string Dscrp { get; set; }
-        public string img { get; set; }
-        public DateTime Date { get; set; }
+        public string Img { get; set; }
+        public string Date { get; set; }
         public int TeamID { get; set; }
-        public Team Team { get; set; }
+        public Team Team { get; private set; }
     }
 }
