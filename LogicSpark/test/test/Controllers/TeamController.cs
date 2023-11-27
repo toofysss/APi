@@ -16,13 +16,6 @@ namespace test.Controllers
         private readonly ApplicationDbContext _TeamController;
         public TeamController(ApplicationDbContext team) => _TeamController = team;
 
-
-        public class InsertDataTeam
-        {
-            public Team Team { get; set; }
-            public Social Social { get; set; }
-        }
-
         [HttpGet("GetAll")]
         public async Task<ActionResult<IEnumerable<Team>>> GetTeamDataAsync()
         {
@@ -39,9 +32,6 @@ namespace test.Controllers
 
             return Ok(teamData);
         }
-
-
-
 
         [HttpGet("GetByID")]
         public async Task<ActionResult<IEnumerable<Team>>> GetTeam(int id)
@@ -65,29 +55,19 @@ namespace test.Controllers
         }
 
         [HttpPost("InsertData")]
-        public async Task<ActionResult<IEnumerable<Team>>> Insert([FromBody] InsertDataTeam insertDataDto)
+        public async Task<ActionResult<IEnumerable<Team>>> Insert([FromBody] Team Team)
         {
-            if (insertDataDto == null)
-            {
-                return BadRequest();
-            }
-            var team = insertDataDto.Team;
-            var social = insertDataDto.Social;
+            if (Team == null)return BadRequest();
 
-            if (team == null || social == null)
-            {
-                return BadRequest();
-            }
+            var team = Team;
+            var social = team.Social;
             team.Id= 0;
             _TeamController.Social.Add(social);
             _TeamController.SaveChanges();
 
             team.SocialID = social.id;
-                _TeamController.Team.Add(team);
-            
+            _TeamController.Team.Add(team);          
             _TeamController.SaveChanges();
-
-
             return Ok("Success");
 
         }
