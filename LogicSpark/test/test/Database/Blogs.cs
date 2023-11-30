@@ -13,8 +13,8 @@ namespace test.Database
         public string Title { get; set; }
         public string Dscrp { get; set; }
         public string Img { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public int TeamID { get; set; }
-        public Team Team { get; set; }
+        public Team Team { get; private set; }
     }
 }

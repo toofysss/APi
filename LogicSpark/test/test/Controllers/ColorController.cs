@@ -60,14 +60,15 @@ namespace test.Database
         }
 
         [HttpPut("UPDATE")]
-        public IActionResult Update( [FromBody] AD AdData)
+        public IActionResult Update([FromBody] Color color)
         {
-            var ADfromDb = _ColorController.ColorsSetting.FirstOrDefault(x => x.Id == AdData.Id);
-            if (ADfromDb != null)
+            var AdDataCollection = _ColorController.ColorsSetting.FirstOrDefault(x => x.Id == color.Id);
+            if (AdDataCollection != null)
             {
-               if(AdData.Dscrp !=null) ADfromDb.Dscrp = AdData.Dscrp;
-                if (AdData.Title != null) ADfromDb.Title = AdData.Title;
-                _ColorController.ColorsSetting.Update(ADfromDb);
+               if(color.Dscrp !=null) AdDataCollection.Dscrp = color.Dscrp;
+               if (color.Title != null) AdDataCollection.Title = color.Title;
+               if (color.WebsiteinfoId >0) AdDataCollection.WebsiteinfoId = color.WebsiteinfoId;
+                _ColorController.ColorsSetting.Update(AdDataCollection);
                 _ColorController.SaveChanges();
                 return Ok("Success");
             }

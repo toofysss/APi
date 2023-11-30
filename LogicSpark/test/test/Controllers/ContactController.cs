@@ -68,6 +68,7 @@ namespace test.Controllers
                 if (ContactData.Threads != null) ContactfromDb.Threads = ContactData.Threads;
                 if (ContactData.Email != null) ContactfromDb.Email = ContactData.Email;
                 if (ContactData.Linkedin != null) ContactfromDb.Linkedin = ContactData.Linkedin;
+                if (ContactData.Facebook != null) ContactfromDb.Facebook = ContactData.Facebook;
                 if (ContactData.Location != null) ContactfromDb.Location = ContactData.Location;
                 if (ContactData.PhoneNumber != null) ContactfromDb.PhoneNumber = ContactData.PhoneNumber;
                 if (ContactData.Tiktok != null) ContactfromDb.Tiktok = ContactData.Tiktok;

@@ -14,8 +14,6 @@ namespace test
         public string Dscrp { get; set; }
         public string Link { get; set; }
         public string Img { get; set; }
-        public string Img2 { get; set; }
-
         public string Bg { get; set; }
     }
 }

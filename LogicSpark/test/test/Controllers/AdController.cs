@@ -77,10 +77,12 @@ namespace test.Controllers
             var ADfromDb = _adController.Ad.FirstOrDefault(x => x.Id == AdData.Id);
             if (ADfromDb != null)
             {
-               if(AdData.Img !=null) ADfromDb.Img = AdData.Img;
-                if (AdData.Link != null) ADfromDb.Link = AdData.Link;
-                if (AdData.Img2 != null) ADfromDb.Img2 = AdData.Img2;
-                if (AdData.Title != null) ADfromDb.Title = AdData.Title;
+               if(AdData.Title != null) ADfromDb.Title = AdData.Title;
+               if (AdData.Dscrp != null) ADfromDb.Dscrp = AdData.Dscrp;
+               if (AdData.Link != null) ADfromDb.Link = AdData.Link;
+               if (AdData.Img != null) ADfromDb.Img = AdData.Img;
+               if (AdData.Bg != null) ADfromDb.Bg = AdData.Bg;
+
                 _adController.Ad.Update(ADfromDb);
                 _adController.SaveChanges();
                 return Ok("Success");

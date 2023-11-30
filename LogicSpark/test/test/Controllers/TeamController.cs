@@ -21,11 +21,11 @@ namespace test.Controllers
         {
             var teamData = await _TeamController.Team.Include(t => t.Social).Select(t => new
                 {
-                    id = t.Id,
-                    name = t.Name,
-                    title = t.Title,
-                    job = t.Job,
-                    img = t.Profileimg,
+                    t.Id,
+                    t.Name,
+                    t.Title,
+                    t.Job,
+                    t.Profileimg,
                     projects = _TeamController.Project.Where(p => p.Team.Id == t.Id).Select(p => p.Dscrp).ToList(),
                     social = _TeamController.Social.Where(p => p.Id == t.SocialID).ToList()
                 }).ToListAsync();
@@ -41,11 +41,11 @@ namespace test.Controllers
                 .Where(t => t.Id == id)
                 .Select(t => new
                 {
-                    id = t.Id,
-                    name = t.Name,
-                    title = t.Title,
-                    job = t.Job,
-                    img = t.Profileimg,
+                    t.Id,
+                    t.Name,
+                    t.Title,
+                    t.Job,
+                    t.Profileimg,
                     projects = _TeamController.Project.Where(p => p.Team.Id == t.Id).Select(p => p.Dscrp).ToList(),
                     social = _TeamController.Social.Where(p => p.Id == t.SocialID).ToList()
                 })
@@ -61,11 +61,10 @@ namespace test.Controllers
 
             var team = Team;
             var social = team.Social;
-            team.Id= 0;
+            team.Id= 0; 
+            team.SocialID = social.Id;
             _TeamController.Social.Add(social);
             _TeamController.SaveChanges();
-
-            team.SocialID = social.Id;
             _TeamController.Team.Add(team);          
             _TeamController.SaveChanges();
             return Ok("Success");
@@ -73,28 +72,34 @@ namespace test.Controllers
         }
 
         [HttpPut("UpdateData")]
-        public ActionResult<IEnumerable<Team>> Update([FromBody] Team UpdateDataDto)
+        public ActionResult<IEnumerable<Team>> Update([FromBody] Team Team)
         {
-        var Teamid=_TeamController.Team.FirstOrDefault(x => x.Id == UpdateDataDto.Id);
-          if(UpdateDataDto.Job !=null)  Teamid.Job = UpdateDataDto.Job;
-            if (UpdateDataDto.Name != null) Teamid.Name = UpdateDataDto.Name;
-            if (UpdateDataDto.Profileimg != null) Teamid.Profileimg = UpdateDataDto.Profileimg;
-            if (UpdateDataDto.Title != null) Teamid.Title = UpdateDataDto.Title;
-            if (UpdateDataDto == null|| Teamid==null) return BadRequest();
-            var socialID = _TeamController.Social.FirstOrDefault(x => x.Id == UpdateDataDto.SocialID);
-            if (UpdateDataDto.Social.Instagram != null) socialID.Instagram = UpdateDataDto.Social.Instagram;
-            if (UpdateDataDto.Social.Linkedin != null) socialID.Linkedin = UpdateDataDto.Social.Linkedin;
-            if (UpdateDataDto.Social.Telegram != null) socialID.Telegram = UpdateDataDto.Social.Telegram;
-            if (UpdateDataDto.Social.Threads != null) socialID.Threads = UpdateDataDto.Social.Threads;
-            if (UpdateDataDto.Social.Tiktok != null) socialID.Tiktok = UpdateDataDto.Social.Tiktok;
-            if (UpdateDataDto.Social.Twitter != null) socialID.Twitter = UpdateDataDto.Social.Twitter;
-            if (UpdateDataDto.Social.Whatsapp != null) socialID.Whatsapp = UpdateDataDto.Social.Whatsapp;
-            if (UpdateDataDto.Social.Youtube != null) socialID.Youtube = UpdateDataDto.Social.Youtube;
-
+        var Teamid=_TeamController.Team.FirstOrDefault(x => x.Id == Team.Id);
+            if (Teamid == null) return NotFound();
+            if (Team.Name != null) Teamid.Name = Team.Name;            
+            if (Team.Title != null) Teamid.Title = Team.Title;
+            if(Team.Job !=null)  Teamid.Job = Team.Job;
+            if (Team.Profileimg != null) Teamid.Profileimg = Team.Profileimg;
+            if (Team.SocialID >0) Teamid.SocialID = Team.SocialID;
+            var socialID = _TeamController.Social.FirstOrDefault(x => x.Id == Teamid.SocialID);
+            if (socialID != null)
+            {
+            if (Team.Social.Instagram != null) socialID.Instagram = Team.Social.Instagram;
+            if (Team.Social.Linkedin != null) socialID.Linkedin = Team.Social.Linkedin;
+            if (Team.Social.Telegram != null) socialID.Telegram = Team.Social.Telegram;
+            if (Team.Social.Facebook != null) socialID.Facebook = Team.Social.Facebook;
+            if (Team.Social.Threads != null) socialID.Threads = Team.Social.Threads;
+            if (Team.Social.Tiktok != null) socialID.Tiktok = Team.Social.Tiktok;
+            if (Team.Social.Twitter != null) socialID.Twitter = Team.Social.Twitter;
+            if (Team.Social.Whatsapp != null) socialID.Whatsapp = Team.Social.Whatsapp;
+            if (Team.Social.Youtube != null) socialID.Youtube = Team.Social.Youtube;
             _TeamController.Social.Update(socialID);
+            }
+
+
             _TeamController.Team.Update(Teamid);
             _TeamController.SaveChanges();
-            return Ok(GetTeamDataAsync());
+            return Ok("success");
 
         }
 

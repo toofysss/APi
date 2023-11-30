@@ -8,14 +8,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword />
     <_PublishTargetUrl>ftp://LogicSpark.somee.com/www.LogicSpark.somee.com</_PublishTargetUrl>
-    <History>True|2023-11-30T10:47:08.2929120Z;True|2023-11-27T11:31:06.1786166+03:00;True|2023-11-26T15:30:53.0238582+03:00;True|2023-11-26T14:02:45.1750744+03:00;True|2023-11-05T14:36:22.5946100+03:00;True|2023-11-05T11:24:08.2234557+03:00;</History>
+    <History>True|2023-11-27T20:10:10.6822849Z;True|2023-11-27T11:31:06.1786166+03:00;True|2023-11-26T15:30:53.0238582+03:00;True|2023-11-26T14:02:45.1750744+03:00;True|2023-11-05T14:36:22.5946100+03:00;True|2023-11-05T11:24:08.2234557+03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
-      <publishTime>11/26/2023 11:16:08</publishTime>
+      <publishTime>11/27/2023 21:58:14</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>11/26/2023 15:19:47</publishTime>
+      <publishTime>11/27/2023 21:58:14</publishTime>
     </File>
     <File Include="BouncyCastle.Cryptography.dll">
       <publishTime>04/21/2023 15:07:00</publishTime>
@@ -111,22 +111,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/18/2022 19:32:44</publishTime>
     </File>
     <File Include="test.deps.json">
-      <publishTime>11/30/2023 13:46:48</publishTime>
+      <publishTime>11/27/2023 23:09:18</publishTime>
     </File>
     <File Include="test.dll">
-      <publishTime>11/30/2023 13:46:48</publishTime>
+      <publishTime>11/27/2023 23:09:18</publishTime>
     </File>
     <File Include="test.exe">
-      <publishTime>11/30/2023 13:46:48</publishTime>
+      <publishTime>11/27/2023 23:09:18</publishTime>
     </File>
     <File Include="test.pdb">
-      <publishTime>11/30/2023 13:46:48</publishTime>
+      <publishTime>11/27/2023 23:09:18</publishTime>
     </File>
     <File Include="test.runtimeconfig.json">
-      <publishTime>11/26/2023 14:02:00</publishTime>
+      <publishTime>11/27/2023 23:09:18</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>11/30/2023 13:46:48</publishTime>
+      <publishTime>11/27/2023 23:09:35</publishTime>
     </File>
     <File Include="ZstdSharp.dll">
       <publishTime>04/06/2023 15:25:30</publishTime>

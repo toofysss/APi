@@ -27,6 +27,7 @@ namespace test.Controllers
                 p.Dscrp,
                 p.Title,
                 p.Img,
+                p.Date,
                 team= _context.Team
                     .Where(t => t.Id == p.TeamID)
                     .Include(t => t.Social)
@@ -59,7 +60,7 @@ namespace test.Controllers
         }
 
         [HttpPost("InsertData")]
-        public  ActionResult<IEnumerable<Blogs>> Insert([FromBody] Blogs blogs)
+        public ActionResult<IEnumerable<Blogs>> Insert([FromBody] Blogs blogs)
         {
             if (!_context.Blogs.Any(ad => ad.Id == blogs.Id))
             {
@@ -94,21 +95,17 @@ namespace test.Controllers
         public IActionResult Update( [FromBody] Blogs blogs)
         {
             var ADfromDb = _context.Blogs.FirstOrDefault(x => x.Id == blogs.Id);
-            if (ADfromDb != null)
-            {
-             if(blogs.Img !=null)   ADfromDb.Img = blogs.Img;
-                if (blogs.Dscrp != null) ADfromDb.Dscrp = blogs.Dscrp;
-                if (blogs.Title != null) ADfromDb.Title = blogs.Title;
-                if (blogs.TeamID >0) ADfromDb.TeamID = blogs.TeamID;
+            if (ADfromDb == null) NotFound();
+            if (blogs.Title != null) ADfromDb.Title = blogs.Title;
+            if (blogs.Dscrp != null) ADfromDb.Dscrp = blogs.Dscrp;
+            if (blogs.Img !=null)   ADfromDb.Img = blogs.Img;
+            if (blogs.Date != null) ADfromDb.Date = blogs.Date;
+            if (blogs.TeamID >0) ADfromDb.TeamID = blogs.TeamID;
 
                 _context.Blogs.Update(ADfromDb);
                 _context.SaveChanges();
                 return Ok("Success");
-            }
-            else
-            {
-                return NotFound();
-            }
+
         }
     }
    

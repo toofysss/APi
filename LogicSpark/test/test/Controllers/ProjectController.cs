@@ -98,32 +98,31 @@ namespace test.Controllers
             var projectFromDb = _context.Project.FirstOrDefault(x => x.Id == project.Id);
 
             if (projectFromDb == null) return NotFound();
-
-            if(project.ProjectFile !=null)   projectFromDb.ProjectFile = project.ProjectFile;
-            if (project.Link != null) projectFromDb.Link = project.Link;
-            if (project.TeamID >0) projectFromDb.TeamID =project.TeamID;
             if (project.Dscrp != null) projectFromDb.Dscrp = project.Dscrp;
             if (project.Details != null) projectFromDb.Details = project.Details;
-            foreach (var projectImg in project.ProjectImg)
-            {
-                var check = _context.ProjectImg.FirstOrDefault(pi => pi.Id == projectImg.Id && pi.ProjectId == project.Id);
-                if (check != null)
-                {
-                    check.ProjectId = project.Id;
-                    check.Dscrp = projectImg.Dscrp;
-                    _context.ProjectImg.Update(check);
-                }
-                else
-                {
-                    var newProjectImg = new ProjectImg
+            if (project.Link != null) projectFromDb.Link = project.Link;
+            if (project.ProjectFile !=null)   projectFromDb.ProjectFile = project.ProjectFile;
+            if (project.TeamID >0) projectFromDb.TeamID =project.TeamID;
+            if (project.ProjectImg != null)foreach (var projectImg in project.ProjectImg)
                     {
-                        Id =0, 
-                        ProjectId = project.Id, 
-                        Dscrp = projectImg.Dscrp 
-                    };
-                    _context.ProjectImg.Add(newProjectImg);
-                }    
-            }
+                        var check = _context.ProjectImg.FirstOrDefault(pi => pi.Id == projectImg.Id && pi.ProjectId == project.Id);
+                        if (check != null)
+                        {
+                            check.ProjectId = project.Id;
+                            check.Dscrp = projectImg.Dscrp;
+                            _context.ProjectImg.Update(check);
+                        }
+                        else
+                        {
+                            var newProjectImg = new ProjectImg
+                            {
+                                Id =0, 
+                                ProjectId = project.Id, 
+                                Dscrp = projectImg.Dscrp 
+                            };
+                            _context.ProjectImg.Add(newProjectImg);
+                        }    
+                    }       
             _context.Project.Update(projectFromDb);
             _context.SaveChanges();
             return Ok("Success");
