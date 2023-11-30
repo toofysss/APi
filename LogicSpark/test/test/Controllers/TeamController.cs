@@ -22,12 +22,12 @@ namespace test.Controllers
             var teamData = await _TeamController.Team.Include(t => t.Social).Select(t => new
                 {
                     id = t.Id,
-                    name = t.name,
-                    title = t.title,
-                    job = t.job,
+                    name = t.Name,
+                    title = t.Title,
+                    job = t.Job,
                     img = t.Profileimg,
                     projects = _TeamController.Project.Where(p => p.Team.Id == t.Id).Select(p => p.Dscrp).ToList(),
-                    social = _TeamController.Social.Where(p => p.id == t.SocialID).ToList()
+                    social = _TeamController.Social.Where(p => p.Id == t.SocialID).ToList()
                 }).ToListAsync();
 
             return Ok(teamData);
@@ -42,12 +42,12 @@ namespace test.Controllers
                 .Select(t => new
                 {
                     id = t.Id,
-                    name = t.name,
-                    title = t.title,
-                    job = t.job,
+                    name = t.Name,
+                    title = t.Title,
+                    job = t.Job,
                     img = t.Profileimg,
                     projects = _TeamController.Project.Where(p => p.Team.Id == t.Id).Select(p => p.Dscrp).ToList(),
-                    social = _TeamController.Social.Where(p => p.id == t.SocialID).ToList()
+                    social = _TeamController.Social.Where(p => p.Id == t.SocialID).ToList()
                 })
                 .ToListAsync();
 
@@ -55,7 +55,7 @@ namespace test.Controllers
         }
 
         [HttpPost("InsertData")]
-        public async Task<ActionResult<IEnumerable<Team>>> Insert([FromBody] Team Team)
+        public ActionResult<IEnumerable<Team>> Insert([FromBody] Team Team)
         {
             if (Team == null)return BadRequest();
 
@@ -65,7 +65,7 @@ namespace test.Controllers
             _TeamController.Social.Add(social);
             _TeamController.SaveChanges();
 
-            team.SocialID = social.id;
+            team.SocialID = social.Id;
             _TeamController.Team.Add(team);          
             _TeamController.SaveChanges();
             return Ok("Success");
@@ -73,15 +73,15 @@ namespace test.Controllers
         }
 
         [HttpPut("UpdateData")]
-        public async Task<ActionResult<IEnumerable<Team>>> Update([FromBody] Team UpdateDataDto)
+        public ActionResult<IEnumerable<Team>> Update([FromBody] Team UpdateDataDto)
         {
         var Teamid=_TeamController.Team.FirstOrDefault(x => x.Id == UpdateDataDto.Id);
-          if(UpdateDataDto.job !=null)  Teamid.job = UpdateDataDto.job;
-            if (UpdateDataDto.name != null) Teamid.name = UpdateDataDto.name;
+          if(UpdateDataDto.Job !=null)  Teamid.Job = UpdateDataDto.Job;
+            if (UpdateDataDto.Name != null) Teamid.Name = UpdateDataDto.Name;
             if (UpdateDataDto.Profileimg != null) Teamid.Profileimg = UpdateDataDto.Profileimg;
-            if (UpdateDataDto.title != null) Teamid.title = UpdateDataDto.title;
+            if (UpdateDataDto.Title != null) Teamid.Title = UpdateDataDto.Title;
             if (UpdateDataDto == null|| Teamid==null) return BadRequest();
-            var socialID = _TeamController.Social.FirstOrDefault(x => x.id == UpdateDataDto.SocialID);
+            var socialID = _TeamController.Social.FirstOrDefault(x => x.Id == UpdateDataDto.SocialID);
             if (UpdateDataDto.Social.Instagram != null) socialID.Instagram = UpdateDataDto.Social.Instagram;
             if (UpdateDataDto.Social.Linkedin != null) socialID.Linkedin = UpdateDataDto.Social.Linkedin;
             if (UpdateDataDto.Social.Telegram != null) socialID.Telegram = UpdateDataDto.Social.Telegram;
@@ -99,12 +99,12 @@ namespace test.Controllers
         }
 
         [HttpDelete("DeleteData")]
-        public async Task<ActionResult<IEnumerable<Team>>> Delete(int id)
+        public ActionResult<IEnumerable<Team>> Delete(int id)
         {
             var ADid = _TeamController.Team.Find(id);
             if (ADid != null)
             {
-                var socialID = _TeamController.Social.FirstOrDefault(x => x.id == ADid.SocialID);
+                var socialID = _TeamController.Social.FirstOrDefault(x => x.Id == ADid.SocialID);
                 _TeamController.Social.Remove(socialID);
                 _TeamController.Team.Remove(ADid);
                 _TeamController.SaveChanges();

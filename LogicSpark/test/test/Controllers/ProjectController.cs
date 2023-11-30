@@ -27,16 +27,16 @@ namespace test.Controllers
         {
             var projects = await _context.Project.Include(p => p.ProjectImg).Select(p => new
             {
-                Id = p.Id,
-                Dscrp = p.Dscrp,
-                Details = p.Details,
-                Link = p.Link,
-                ProjectFile = p.ProjectFile,
+                p.Id,
+                p.Dscrp,
+                p.Details,
+                p.Link,
+                p.ProjectFile,
                 ProjectImg = _context.ProjectImg.Where(pi => pi.ProjectId == p.Id).ToList(),
                 Team = _context.Team
                 .Where(t => t.Id == p.TeamID)
                 .Include(t => t.Social)
-                .Where(t => t.Social.id == t.SocialID)
+                .Where(t => t.Social.Id == t.SocialID)
                 .ToList()
             }).ToListAsync();
             return Ok(projects);
@@ -50,16 +50,16 @@ namespace test.Controllers
                 .Where(t => t.Id == id).
                  Select(p => new
                  {
-                     Id = p.Id,
-                     Dscrp = p.Dscrp,
-                     Details = p.Details,
-                     Link = p.Link,
-                     ProjectFile = p.ProjectFile,
+                     p.Id,
+                     p.Dscrp,
+                     p.Details,
+                     p.Link,
+                     p.ProjectFile,
                      ProjectImg = _context.ProjectImg.Where(pi => pi.ProjectId == p.Id).ToList(),
                      Team = _context.Team
                      .Where(t => t.Id == p.TeamID)
                      .Include(t => t.Social)
-                     .Where(t => t.Social.id == t.SocialID)
+                     .Where(t => t.Social.Id == t.SocialID)
                      .ToList()
                  }).ToListAsync();
 
@@ -87,7 +87,7 @@ namespace test.Controllers
         }
         public class InsertDataDto
         {
-            public Project project { get; set; }
+            public Project Project { get; set; }
 
             public List<ProjectImg> Img { get; set; }
         }
@@ -101,7 +101,7 @@ namespace test.Controllers
 
             if(project.ProjectFile !=null)   projectFromDb.ProjectFile = project.ProjectFile;
             if (project.Link != null) projectFromDb.Link = project.Link;
-            if (project.TeamID != null) projectFromDb.TeamID =project.TeamID;
+            if (project.TeamID >0) projectFromDb.TeamID =project.TeamID;
             if (project.Dscrp != null) projectFromDb.Dscrp = project.Dscrp;
             if (project.Details != null) projectFromDb.Details = project.Details;
             foreach (var projectImg in project.ProjectImg)

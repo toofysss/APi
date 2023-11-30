@@ -43,7 +43,7 @@ namespace test.Controllers
         }
 
         [HttpDelete("Delete")]
-        public IActionResult delete(int id)
+        public IActionResult Delete(int id)
         {
             var ADid = _context.Websiteinfo.Find(id);
             if (ADid != null)

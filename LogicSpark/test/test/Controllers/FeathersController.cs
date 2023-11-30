@@ -11,7 +11,7 @@ namespace test.Controllers
     [Route("[controller]")]
     public class FeathersController : ControllerBase
     {
-        private ApplicationDbContext _FeathersController;
+        private readonly ApplicationDbContext _FeathersController;
 
         public FeathersController(ApplicationDbContext logger)
         {
@@ -55,7 +55,7 @@ namespace test.Controllers
         }
 
         [HttpDelete("Delete")]
-        public IActionResult delete(int id)
+        public IActionResult Delete(int id)
         {
             var Featuresid = _FeathersController.Features.Find(id);
             if (Featuresid != null)

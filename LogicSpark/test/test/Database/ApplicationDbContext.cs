@@ -12,7 +12,7 @@ namespace test.Database
         {
         }
 
-        public DbSet<AD> ad { get; set; }
+        public DbSet<AD> Ad { get; set; }
         public DbSet<Features> Features { get; set; }
         public DbSet<Websiteinfo> Websiteinfo { get; set; }
         public DbSet<Color> ColorsSetting { get; set; }
