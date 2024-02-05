@@ -6,16 +6,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWmnyZXkd7UKZaBI6/0CpEgAAAAACAAAAAAAQZgAAAAEAACAAAADq4miYCC2u1i3l5BXzY2sXOiy3dDMiTt7fPNcwhCTDsAAAAAAOgAAAAAIAACAAAADQ0rUDwz1Y/3rOIM/iZ09V5TydSoG7x+DHt3FIWjIqGiAAAAAJnGcyDz57566wgDIiX+D0FohWGofavUBa5GGaCBniuUAAAACbTT40oiEPwp2yvOhHzdKELPABfUd1aRFLiz5+WhxC3pVAm+UW0rhZxDYBu2mqbQ3SxwxMQV7CfkPeiXPfZQXY</EncryptedPassword>
-    <_PublishTargetUrl>ftp://198.37.116.26/www.testinglaw.somee.com</_PublishTargetUrl>
-    <History>False|2023-11-25T23:06:07.6306667Z;True|2023-11-03T05:12:58.5900333+03:00;False|2023-11-03T05:09:47.1016029+03:00;True|2023-11-03T03:33:14.8881376+03:00;False|2023-11-03T03:30:02.8817546+03:00;True|2023-11-03T03:06:17.8248281+03:00;True|2023-11-03T03:02:22.2027961+03:00;</History>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxBg8yyDVs0uijDj6kpNYVQAAAAACAAAAAAAQZgAAAAEAACAAAACcR+PV3Z0Uq/0rKdwljSF0JVMnrLZbi3QUmTvWGJ+AnQAAAAAOgAAAAAIAACAAAACqDLUMxjboHWbQe6IVf0ArrjD+zF+SyeC/TAMSdfZ0ZSAAAAB0HLxG6qRmbF5MSjSoWU90G1CZV0hpuRMlakqF6xd1V0AAAAAO4gCeWzB6SQEc86Ru2Qv0om69H2n2p93KIJj1SDMCQjhqtZQ3hfTnFFUemAdD9bpBTMkdPv1WDmXpYjSnarVn</EncryptedPassword>
+    <_PublishTargetUrl>ftp://templete.somee.com/www.templete.somee.com</_PublishTargetUrl>
+    <History>True|2024-01-25T14:09:19.7713297Z;False|2024-01-25T17:06:04.8653590+03:00;False|2024-01-25T17:05:18.6925813+03:00;False|2023-11-26T02:06:07.6306667+03:00;True|2023-11-03T05:12:58.5900333+03:00;False|2023-11-03T05:09:47.1016029+03:00;True|2023-11-03T03:33:14.8881376+03:00;False|2023-11-03T03:30:02.8817546+03:00;True|2023-11-03T03:06:17.8248281+03:00;True|2023-11-03T03:02:22.2027961+03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
-      <publishTime>11/03/2023 02:33:06</publishTime>
+      <publishTime>01/25/2024 17:01:04</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>11/03/2023 02:33:06</publishTime>
+      <publishTime>01/25/2024 17:01:04</publishTime>
     </File>
     <File Include="Microsoft.Data.SqlClient.dll">
       <publishTime>08/26/2020 02:24:48</publishTime>
@@ -60,19 +60,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/20/2017 23:03:18</publishTime>
     </File>
     <File Include="Notes.deps.json">
-      <publishTime>11/03/2023 05:10:01</publishTime>
+      <publishTime>01/25/2024 17:06:43</publishTime>
     </File>
     <File Include="Notes.dll">
-      <publishTime>11/03/2023 05:10:00</publishTime>
+      <publishTime>01/25/2024 17:06:43</publishTime>
     </File>
     <File Include="Notes.exe">
-      <publishTime>11/03/2023 05:10:01</publishTime>
+      <publishTime>01/25/2024 17:06:43</publishTime>
     </File>
     <File Include="Notes.pdb">
-      <publishTime>11/03/2023 05:10:00</publishTime>
+      <publishTime>01/25/2024 17:06:43</publishTime>
     </File>
     <File Include="Notes.runtimeconfig.json">
-      <publishTime>11/03/2023 03:28:26</publishTime>
+      <publishTime>01/25/2024 17:03:50</publishTime>
     </File>
     <File Include="runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
       <publishTime>08/26/2020 02:25:12</publishTime>
@@ -135,7 +135,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/15/2019 11:37:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>11/03/2023 05:10:01</publishTime>
+      <publishTime>01/25/2024 17:06:50</publishTime>
     </File>
   </ItemGroup>
 </Project>

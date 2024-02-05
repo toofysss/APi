@@ -10,15 +10,11 @@
         "projectUniqueName": "E:\\Project\\APi\\Notes\\Notes\\Notes.csproj",
         "projectName": "Notes",
         "projectPath": "E:\\Project\\APi\\Notes\\Notes\\Notes.csproj",
-        "packagesPath": "C:\\Users\\Tabark\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\meeko\\.nuget\\packages\\",
         "outputPath": "E:\\Project\\APi\\Notes\\Notes\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Tabark\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\meeko\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -59,7 +59,6 @@ C:\Users\Tabark\Desktop\APi\Notes\Notes\bin\Debug\net5.0\ref\Notes.dll
 C:\Users\Tabark\Desktop\APi\Notes\Notes\obj\Debug\net5.0\staticwebassets\Notes.StaticWebAssets.xml
 E:\Project\APi\Notes\Notes\bin\Debug\net5.0\appsettings.Development.json
 E:\Project\APi\Notes\Notes\bin\Debug\net5.0\appsettings.json
-E:\Project\APi\Notes\Notes\bin\Debug\net5.0\Notes.StaticWebAssets.xml
 E:\Project\APi\Notes\Notes\bin\Debug\net5.0\Notes.exe
 E:\Project\APi\Notes\Notes\bin\Debug\net5.0\Notes.deps.json
 E:\Project\APi\Notes\Notes\bin\Debug\net5.0\Notes.runtimeconfig.json
@@ -100,7 +99,6 @@ E:\Project\APi\Notes\Notes\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Da
 E:\Project\APi\Notes\Notes\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 E:\Project\APi\Notes\Notes\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 E:\Project\APi\Notes\Notes\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\Project\APi\Notes\Notes\obj\Debug\net5.0\Notes.csproj.AssemblyReference.cache
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\Notes.GeneratedMSBuildEditorConfig.editorconfig
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\Notes.AssemblyInfoInputs.cache
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\Notes.AssemblyInfo.cs
@@ -109,15 +107,11 @@ E:\Project\APi\Notes\Notes\obj\Debug\net5.0\Notes.MvcApplicationPartsAssemblyInf
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\Notes.MvcApplicationPartsAssemblyInfo.cache
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\scopedcss\bundle\Notes.styles.css
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\staticwebassets\Notes.StaticWebAssets.Manifest.cache
-E:\Project\APi\Notes\Notes\obj\Debug\net5.0\staticwebassets\Notes.StaticWebAssets.Pack.cache
-E:\Project\APi\Notes\Notes\obj\Debug\net5.0\staticwebassets\msbuild.Notes.Microsoft.AspNetCore.StaticWebAssets.props
-E:\Project\APi\Notes\Notes\obj\Debug\net5.0\staticwebassets\msbuild.build.Notes.props
-E:\Project\APi\Notes\Notes\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.Notes.props
-E:\Project\APi\Notes\Notes\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.Notes.props
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\Notes.RazorTargetAssemblyInfo.cache
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\Notes.csproj.CopyComplete
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\Notes.dll
-E:\Project\APi\Notes\Notes\obj\Debug\net5.0\refint\Notes.dll
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\Notes.pdb
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\Notes.genruntimeconfig.cache
 E:\Project\APi\Notes\Notes\obj\Debug\net5.0\ref\Notes.dll
+E:\Project\APi\Notes\Notes\bin\Debug\net5.0\ref\Notes.dll
+E:\Project\APi\Notes\Notes\obj\Debug\net5.0\staticwebassets\Notes.StaticWebAssets.xml
