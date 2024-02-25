@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>
+    </EncryptedPassword>
+    <History>True|2023-12-10T09:45:54.9510169Z;False|2023-12-10T12:45:25.5471487+03:00;True|2023-12-08T16:12:34.9217139+03:00;False|2023-12-08T16:11:43.1025293+03:00;True|2023-12-08T15:56:50.3952560+03:00;False|2023-12-08T15:55:48.4991730+03:00;True|2023-12-08T15:25:59.6407508+03:00;False|2023-12-08T15:24:47.0420777+03:00;True|2023-12-08T14:42:32.2625080+03:00;True|2023-12-05T12:51:24.9520313+03:00;False|2023-12-05T12:50:32.9594441+03:00;True|2023-12-03T10:37:32.8877140+03:00;True|2023-12-01T03:46:08.1799145+03:00;False|2023-12-01T03:43:37.9340682+03:00;True|2023-12-01T03:24:15.8210500+03:00;False|2023-12-01T03:23:31.2093044+03:00;True|2023-12-01T03:07:57.8908821+03:00;False|2023-12-01T03:07:15.2659865+03:00;True|2023-12-01T02:28:58.9357320+03:00;False|2023-12-01T02:28:23.8724600+03:00;False|2023-12-01T02:27:43.9812299+03:00;True|2023-11-29T11:41:23.4835510+03:00;False|2023-11-29T11:40:23.2040213+03:00;True|2023-11-28T23:01:26.8435600+03:00;False|2023-11-28T23:00:28.5474412+03:00;False|2023-11-28T22:59:30.2211946+03:00;False|2023-11-28T22:59:22.5705296+03:00;True|2023-11-26T23:25:52.2179051+03:00;False|2023-11-26T23:25:03.2880396+03:00;True|2023-11-26T23:02:59.1469731+03:00;False|2023-11-26T23:01:07.7136080+03:00;True|2023-11-26T11:01:40.7186697+03:00;False|2023-11-26T02:03:39.5819372+03:00;False|2023-11-26T01:58:21.1636537+03:00;</History>
+    <_PublishTargetUrl>ftp://198.37.116.26/www.testinglaw.somee.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>12/10/2023 09:27:41</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>12/10/2023 12:44:15</publishTime>
+    </File>
+    <File Include="LawApi.deps.json">
+      <publishTime>12/10/2023 12:45:41</publishTime>
+    </File>
+    <File Include="LawApi.dll">
+      <publishTime>12/10/2023 12:45:40</publishTime>
+    </File>
+    <File Include="LawApi.exe">
+      <publishTime>12/10/2023 12:45:40</publishTime>
+    </File>
+    <File Include="LawApi.pdb">
+      <publishTime>12/10/2023 12:45:40</publishTime>
+    </File>
+    <File Include="LawApi.runtimeconfig.json">
+      <publishTime>12/10/2023 12:44:58</publishTime>
+    </File>
+    <File Include="Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>10/18/2022 19:14:58</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <publishTime>10/13/2021 21:48:08</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.dll">
+      <publishTime>10/13/2021 21:48:20</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Relational.dll">
+      <publishTime>03/11/2021 21:36:28</publishTime>
+    </File>
+    <File Include="Microsoft.Extensions.DependencyInjection.dll">
+      <publishTime>06/15/2021 22:12:46</publishTime>
+    </File>
+    <File Include="Microsoft.OpenApi.dll">
+      <publishTime>08/29/2020 23:14:12</publishTime>
+    </File>
+    <File Include="MySqlConnector.dll">
+      <publishTime>04/24/2021 17:23:14</publishTime>
+    </File>
+    <File Include="Pomelo.EntityFrameworkCore.MySql.dll">
+      <publishTime>04/28/2021 23:49:52</publishTime>
+    </File>
+    <File Include="RestSharp.dll">
+      <publishTime>04/09/2023 20:40:56</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.Swagger.dll">
+      <publishTime>09/23/2020 15:47:20</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerGen.dll">
+      <publishTime>09/23/2020 15:47:22</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
+      <publishTime>09/23/2020 15:47:24</publishTime>
+    </File>
+    <File Include="System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>12/12/2020 05:40:42</publishTime>
+    </File>
+    <File Include="System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>10/23/2021 02:40:56</publishTime>
+    </File>
+    <File Include="System.Text.Encodings.Web.dll">
+      <publishTime>10/18/2022 19:31:50</publishTime>
+    </File>
+    <File Include="System.Text.Json.dll">
+      <publishTime>01/20/2023 03:00:14</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>12/10/2023 12:45:41</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
